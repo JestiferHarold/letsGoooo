@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podham..!!!</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+
+    .background {
+      background-image: url(597DBB15-3DF2-4F7B-8D20-CF12064EDABA_1_105_c.jpeg); 
+      background-size: cover;
+      background-repeat: no-repeat;
+      /* background-position: center; */
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 10;
+    }
+
+    .navbar .menu {
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      padding: 10px 15px;
+      transition: background-color 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .center-box {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      color: #333;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .center-box img {
+      max-width: 40%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .center-box .text {
+      flex: 1;
+    }
+
+    .center-box h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .center-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo"><a href="#">Podham...!!!</a></div>
+    <div class="menu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+    </div>
+  </div>
+
+  <div class="background">
+    <h1>Welcome To Podham..!!!</h1>
+    <p>Your Personalized Travel Experience Starts Here</p>
+  </div>
+  <br>
+
+  <!-- Centered Box -->
+  <div class="center-box">
+    <img src="IMG_9549.JPG" alt="Travel Image">
+    <div class="text">
+      <h2>Why Choose Us?</h2>
+      <p>We provide tailored travel solutions to ensure your journey is seamless, enjoyable, and unforgettable. Let us help you create memories that last a lifetime.</p>
+    </div>
+  </div>
+</body>
+</html>
