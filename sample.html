@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
         * {
             margin: 0;
@@ -14,208 +14,147 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        .loginpage {
-            padding-top: 200px;
-            padding-right: 100px;
+        body {
+            background: url(9F9CF86F-F5EA-4B8E-9AB7-7267A5CAE016_1_105_c.jpeg) no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-wrapper {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.15); /* Translucent white */
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .login-wrapper h1 {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .login-wrapper form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-field {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-field input {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.25);
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .input-field input::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .input-field i {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .remember-me label {
+            display: flex;
+            align-items: center;
+        }
+
+        .remember-me input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            background: #fff;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.8);
+            color: #111;
+        }
+
+        .social-buttons {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            min-height: 70vh;
-            background-image: url(9F9CF86F-F5EA-4B8E-9AB7-7267A5CAE016_1_105_c.jpeg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-
-        .tagline {
-            color: #fff;
-            max-width: 650px; 
-            font-size: 50px;
-            font-weight: 600;
-            line-height: 1.5;
-            padding-left: 50px;
-        }
-
-        .wrapper {
-            width: 420px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            color: #fff;
-            padding: 30px 40px;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .wrapper:hover {
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            transform: translateY(-5px);
-        }
-
-        .wrapper h1 {
-            font-size: 36px;
-            text-align: center;
-        }
-
-        .input-box {
-            position: relative;
-            width: 100%;
-            height: 30px;
-            margin: 30px 0;
-        }
-
-        .input-box input {
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1); /* Match wrapper background */
-            border: none;
-            outline: none;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 40px;
-            font-size: 16px;
-            color: #fff;
-            padding: 20px 45px 20px 20px;
-        }
-
-        .input-box input::placeholder {
-            color: #fff;
-        }
-
-        .input-box i {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 20px;
-        }
-
-        .remember-forget {
-            display: flex;
-            justify-content: flex-end;
-            font-size: 14.5px;
-            margin: -15px 0 15px;
-        }
-
-        .remember-forget a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .remember-forget a:hover {
-            text-decoration: underline;
-        }
-
-        .wrapper .btn {
-            width: 100%;
-            height: 45px;
-            background: #fff;
-            border: none;
-            outline: none;
-            border-radius: 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            font-size: 16px;
-            color: #333;
-            font-weight: 600;
-        }
-
-        .wrapper .btn:hover {
-            background: rgba(255, 255, 255, 0.5);
-            color: #fff;
-        }
-
-        .divider {
-            margin: 20px 0;
-            position: relative;
-            font-size: 14px;
-            color: #888;
-            text-align: center;
-        }
-
-        .divider::before,
-        .divider::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            width: 40%;
-            height: 1px;
-            background: #fff;
-        }
-
-        .divider::before {
-            left: 0;
-        }
-
-        .divider::after {
-            right: 0;
+            margin-top: 20px;
         }
 
         .social-buttons button {
-            width: 100%;
-            margin: 10px 0;
-            background: transparent;
+            flex: 1;
+            margin: 0 5px;
+            padding: 10px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.15);
             color: #fff;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 30px;
-            padding: 12px;
             cursor: pointer;
-            font-size: 14px;
-            transition: 0.3s;
+            transition: 0.3s ease;
         }
 
         .social-buttons button:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .register-link {
-            font-size: 14.5px;
-            text-align: center;
-            margin: 20px 0 15px;
-        }
-
-        .register-link p a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .register-link p a:hover {
-            text-decoration: underline;
+            background: rgba(255, 255, 255, 0.3);
         }
     </style>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body class="loginpage">
-    <div class="tagline">
-        <p>Let's cross the limits of planning a trip with us.</p>
-    </div>
-    <div class="wrapper">
-        <form action="">
-            <h1>
-                Podham..!!!
-            </h1>
-            <div class="input-box">
+<body>
+    <div class="login-wrapper">
+        <h1>Login</h1>
+        <form>
+            <div class="input-field">
                 <input type="text" placeholder="Username">
                 <i class='bx bxs-user'></i>
             </div>
-            <div class="input-box">
+            <div class="input-field">
                 <input type="password" placeholder="Password">
                 <i class='bx bxs-lock-alt'></i>
             </div>
-            <div class="remember-forget">
-                <a href="forgotpass.html" class="forget">Forgot password</a>
+            <div class="remember-me">
+                <label>
+                    <input type="checkbox"> Remember Me
+                </label>
+                <a href="#" style="color: #fff;">Forgot Password?</a>
             </div>
-            <button type="submit" class="btn">Login</button>
+            <button type="submit" class="btn">Sign In</button>
         </form>
-        <div class="divider">or</div>
         <div class="social-buttons">
-            <button>Sign in with Phone Number</button>
-            <button>Sign in with Google</button>
-            <button>Sign in with Apple</button>
-        </div>
-        <div class="register-link">
-            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+            <button>Facebook</button>
+            <button>Twitter</button>
         </div>
     </div>
 </body>

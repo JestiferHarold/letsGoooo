@@ -16,6 +16,7 @@
             min-height: 70vh;
             background-image: url(9F9CF86F-F5EA-4B8E-9AB7-7267A5CAE016_1_105_c.jpeg);
             background-size: cover;
+            background-position:top;
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
@@ -27,6 +28,7 @@
             font-weight: 600;
             line-height: 1.5;
             padding-left: 50px;
+            padding-bottom: 50px;
         }
 
         .wrapper {
