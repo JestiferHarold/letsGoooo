@@ -1,164 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Travel Website</title>
- <style>/* General Styles */
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #473D3A;
-    background-color: #FFFFFF;
-    line-height: 1.6;
-  }
-  
-  h1, h2, h3 {
-    margin: 0;
-    font-weight: bold;
-  }
-  
-  p {
-    margin: 0.5em 0 0;
-  }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  /* Header Section */
-  .header {
-    text-align: center;
-    padding: 2em 1em;
-    background-color: #F3F3F3;
-  }
-  
-  .carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 1em;
-    padding: 1em 0;
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-  }
-  
-  .carousel::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome, Safari, and Edge */
-  }
-  
-  .carousel-item {
-    flex: 0 0 auto;
-    background-color: #B25E39;
-    color: #FFFFFF;
-    padding: 1em;
-    border-radius: 8px;
-    min-width: 200px;
-    text-align: center;
-  }
-  
-  .btn {
-    background-color: #B25E39;
-    color: #FFFFFF;
-    border: none;
-    padding: 0.8em 2em;
-    margin-top: 1em;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .btn:hover {
-    background-color: #94472B;
-  }
-  
-  /* Hero Section */
-  .hero {
-    position: relative;
-    background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .hero-text {
-    text-align: center;
-    color: #FFFFFF;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-  }
-  
-  .hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-  }
-  
-  .hero p {
-    font-size: 1.2em;
-  }
-  
-  /* Features Section */
-  .features {
-    display: flex;
-    justify-content: space-around;
-    padding: 3em 1em;
-    background-color: #FFFFFF;
-  }
-  
-  .feature-item {
-    text-align: center;
-    max-width: 300px;
-  }
-  
-  .feature-icon {
-    font-size: 3em;
-    color: #B25E39;
-    margin-bottom: 0.5em;
-  }
-  
-  .feature-item h3 {
-    font-size: 1.5em;
-    margin: 0.5em 0;
-  }
-  
-  .feature-item p {
-    font-size: 1em;
-    color: #6D6D6D;
-  }</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .loginpage {
+            padding-top: 200px;
+            padding-right: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 70vh;
+            background-image: url(9F9CF86F-F5EA-4B8E-9AB7-7267A5CAE016_1_105_c.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .tagline {
+            color: #fff;
+            max-width: 650px; 
+            font-size: 50px;
+            font-weight: 600;
+            line-height: 1.5;
+            padding-left: 50px;
+        }
+
+        .wrapper {
+            width: 420px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #fff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .wrapper:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .wrapper h1 {
+            font-size: 36px;
+            text-align: center;
+        }
+
+        .input-box {
+            position: relative;
+            width: 100%;
+            height: 30px;
+            margin: 30px 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1); /* Match wrapper background */
+            border: none;
+            outline: none;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px;
+            font-size: 16px;
+            color: #fff;
+            padding: 20px 45px 20px 20px;
+        }
+
+        .input-box input::placeholder {
+            color: #fff;
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+        }
+
+        .remember-forget {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 14.5px;
+            margin: -15px 0 15px;
+        }
+
+        .remember-forget a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .remember-forget a:hover {
+            text-decoration: underline;
+        }
+
+        .wrapper .btn {
+            width: 100%;
+            height: 45px;
+            background: #fff;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .wrapper .btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+            color: #fff;
+        }
+
+        .divider {
+            margin: 20px 0;
+            position: relative;
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: #fff;
+        }
+
+        .divider::before {
+            left: 0;
+        }
+
+        .divider::after {
+            right: 0;
+        }
+
+        .social-buttons button {
+            width: 100%;
+            margin: 10px 0;
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            padding: 12px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .social-buttons button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .register-link {
+            font-size: 14.5px;
+            text-align: center;
+            margin: 20px 0 15px;
+        }
+
+        .register-link p a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-link p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
-  <header class="header">
-    <h2>Our Travel Styles</h2>
-    <div class="carousel">
-      <div class="carousel-item">Off the Beaten Path</div>
-      <div class="carousel-item">Outdoor Adventure & Sports</div>
-      <div class="carousel-item">Romantic</div>
-      <div class="carousel-item">Cities, Regions & Locations</div>
+<body class="loginpage">
+    <div class="tagline">
+        <p>Let's cross the limits of planning a trip with us.</p>
     </div>
-    <button class="btn">See All Travel Styles</button>
-  </header>
-
-  <section class="hero">
-    <div class="hero-text">
-      <h1>A Taste of Our Unique Experiences in Italy</h1>
-      <p>Discover hand-crafted journeys inspired by authentic Italian perspectives.</p>
+    <div class="wrapper">
+        <form action="">
+            <h1>
+                Podham..!!!
+            </h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username">
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password">
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="remember-forget">
+                <a href="forgotpass.html" class="forget">Forgot password</a>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <div class="divider">or</div>
+        <div class="social-buttons">
+            <button>Sign in with Phone Number</button>
+            <button>Sign in with Google</button>
+            <button>Sign in with Apple</button>
+        </div>
+        <div class="register-link">
+            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+        </div>
     </div>
-  </section>
-
-  <section class="features">
-    <div class="feature-item">
-      <div class="feature-icon">📍</div>
-      <h3>Local Experiences</h3>
-      <p>Discover authentic experiences tailored to your journey.</p>
-    </div>
-    <div class="feature-item">
-      <div class="feature-icon">🔑</div>
-      <h3>Insider Access</h3>
-      <p>Gain access to unique locations and exclusive opportunities.</p>
-    </div>
-    <div class="feature-item">
-      <div class="feature-icon">❤️</div>
-      <h3>Personal Care</h3>
-      <p>Enjoy personalized attention and expert service.</p>
-    </div>
-  </section>
 </body>
 </html>
