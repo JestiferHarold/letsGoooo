@@ -8,7 +8,7 @@
 }
 
 body {
-  background-image: url(IMG_1325.JPG);
+  background-image: url(https://plus.unsplash.com/premium_photo-1683121800585-22bb2ea26583?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fHNpZ251cCUyMHBhZ2VzJTIwZm9yJTIwdHJhdmVsfGVufDB8fDB8fHww);
   color: #fff;
   display: flex;
   justify-content: center;
@@ -24,7 +24,7 @@ body {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(-20px);
   text-align: center;
 }
 
