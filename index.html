@@ -4,24 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Letss Goo</title>
-    <link rel="stylesheet" href="index.css">
+ <style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Video Background */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Navigation Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: transparent;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-list li a:hover {
+    color: #ff5733;
+    transform: scale(1.1);
+}
+
+.nav-list li::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #ff5733;
+    transition: width 0.4s ease, left 0.4s ease;
+}
+
+.nav-list li:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container svg {
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* Hero Section */
+.heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 2s ease-in-out;
+    z-index: 10;
+}
+
+
+
+.heading h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .heading p {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: #e6d9d9;
+            margin-bottom: 30px;
+        }
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-list li a {
+        font-size: 16px;
+    }
+
+    .heading h1 {
+        font-size: 2.8rem;
+    }
+
+    .heading p {
+        font-size: 1.4rem;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px 30px;
+    }
+}</style>
 </head>
 <body>`
+    <video autoplay muted loop class="video-background">
+        <source src="vecteezy_time-lapse-milky-way-galaxy-stars-star-time-lapse-milky-way_49318768.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <header>
         <nav>
             <div class="logo-container">
                 <svg xmlns="http://www.w3.org/2000/svg" width="150" height="50" viewBox="0 0 800 200">
                     <defs>
-                      <linearGradient id="vamoosGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style="stop-color:#1E90FF; stop-opacity:1" /> <!-- Blue -->
-                        <stop offset="50%" style="stop-color:#32CD32; stop-opacity:1" /> <!-- Lime Green -->
-                        <stop offset="100%" style="stop-color:#20B2AA; stop-opacity:1" /> <!-- Light Sea Green -->
-                      </linearGradient>
+                        <linearGradient id="vamoosGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#FFFFFF; stop-opacity:1" /> <!-- White -->
+                            <stop offset="50%" style="stop-color:#FFFFFF; stop-opacity:1" /> <!-- White -->
+                            <stop offset="100%" style="stop-color:#FFFFFF; stop-opacity:1" /> <!-- White -->
+                        </linearGradient>
                     </defs>
-                    <text x="10" y="150" font-family="Arial, sans-serif" font-size="140" font-weight="bold" fill="url(#vamoosGradient)">
-                      Podham..!!!
+                    <text x="10" y="150" font-family="Arial, sans-serif" font-size="140" font-weight="bold" fill="#FFFFFF">
+                        Podham..!!!
                     </text>
-                  </svg>
+                </svg>
             </div>
             <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>

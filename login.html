@@ -4,7 +4,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="login.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .loginpage {
+            padding-top: 200px;
+            padding-right: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 70vh;
+            /* background-image: url(https://plus.unsplash.com/premium_photo-1679830513869-cd3648acb1db?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8dHJhdmVsfGVufDB8fDB8fHww); */
+            background-image: url(https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzYxfHx0cmF2ZWx8ZW58MHx8MHx8fDA%3D);
+            background-size:cover;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .tagline {
+            color: #fff;
+            max-width: 850px; 
+            font-size: 50px;
+            font-weight: 600;
+            line-height: 1.5;
+            padding-left: 50px;
+            padding-bottom: 70px;
+        }
+
+        .wrapper {
+            width: 420px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #fff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .wrapper:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .wrapper h1 {
+            font-size: 36px;
+            text-align: center;
+        }
+
+        .input-box {
+            position: relative;
+            width: 100%;
+            height: 30px;
+            margin: 30px 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1); /* Match wrapper background */
+            border: none;
+            outline: none;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px;
+            font-size: 16px;
+            color: #fff;
+            padding: 20px 45px 20px 20px;
+        }
+
+        .input-box input::placeholder {
+            color: #fff;
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+        }
+
+        .remember-forget {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 14.5px;
+            margin: -15px 0 15px;
+        }
+
+        .remember-forget a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .remember-forget a:hover {
+            text-decoration: underline;
+        }
+
+        .wrapper .btn {
+            width: 100%;
+            height: 45px;
+            background: #fff;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .wrapper .btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+            color: #fff;
+        }
+
+        .divider {
+            margin: 20px 0;
+            position: relative;
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: #fff;
+        }
+
+        .divider::before {
+            left: 0;
+        }
+
+        .divider::after {
+            right: 0;
+        }
+
+        .social-buttons button {
+            width: 100%;
+            margin: 10px 0;
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            padding: 12px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .social-buttons button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .register-link {
+            font-size: 14.5px;
+            text-align: center;
+            margin: 20px 0 15px;
+        }
+
+        .register-link p a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-link p a:hover {
+            text-decoration: underline;
+        }</style>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body class="loginpage">
