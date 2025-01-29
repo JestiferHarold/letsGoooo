@@ -17,16 +17,16 @@
                 Podham..!!!
             </h1>
             <div class="input-box">
-                <input type="text" placeholder="Username">
+                <input type="text" placeholder="Username" required>
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Password" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
             <div class="remember-forget">
                 <label>
-                    <input type="checkbox" name="remember">
+                    <input type="checkbox" name="remember" required>
                     Remember Me
             <div class="remember-forget">
                 <a href="forgotpass.html" class="forget">Forgot password</a>
@@ -36,13 +36,34 @@
         <div class="divider">or</div>
         <div class="social-buttons">
             <button><a href="sample.html">Sign in with Phone Number</a></button>
-            <button>Sign in with Google</button>
-            <button>Sign in with Apple</button>
+            <button onclick="openGooglePopup()">Sign in with Google</button>
+            <button onclick="openApplePopup()">Sign in with Apple</button>
         </div>
         <div class="register-link">
             <p>Don't have an account? <a href="signup.html">Sign up</a></p>
         </div>
     </div>
-    
+    <script>
+        function openGooglePopup() {
+            let popup = window.open(
+                "google-login.html",  // Replace with your actual Google OAuth URL
+                "GoogleSignIn",
+                "width=500,height=600,left=100,top=100"
+            );
+            
+            if (!popup) {
+                alert("Popup blocked! Please allow pop-ups for this site.");
+            }
+        }
+        function openApplePopup() {
+            let popup = window.open(
+                "apple-login.html", 
+                "AppleSignIn",
+                "width=500,height=600,left=100,top=100"
+                );
+        }
+    </script>
+
+   
 </body>
 </html>
