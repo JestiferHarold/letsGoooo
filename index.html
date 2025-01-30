@@ -163,19 +163,30 @@ nav {
     border: 1px solid #ccc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     margin: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .box img {
     width: 100%;
     height: 300px;
     object-fit: cover;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.box:hover img {
+    transform: scaleY(1.8);
 }
 
 .box-content {
     padding: 10px;
     font-family: Arial, sans-serif;
+    position: relative;
+    z-index: 10;
 }
 
 .box h3 {
