@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Letss Goo</title>
- <style>* {
+    <style>
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -85,8 +86,6 @@ nav {
     height: 50px;
     margin-right: 10px;
 }
-
-
 .heading {
     position: absolute;
     top: 50%;
@@ -150,6 +149,45 @@ nav {
         padding: 10px 30px;
     }
 }
+.container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 200px;
+    margin-top: 1100px; 
+}
+.box {
+    width: 350px;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    margin: 20px;
+}
+
+.box img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.box-content {
+    padding: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.box h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: white;
+}
+
+.box p {
+    font-size: 14px;
+    color: white;
+}
 </style>
 </head>
 <body>
@@ -188,5 +226,31 @@ nav {
             <p>Explore the world with us and make your journey memorable.</p>
         </div>
     </main>
+    <div class="container">
+        <div class="box">
+            <img src="9F9CF86F-F5EA-4B8E-9AB7-7267A5CAE016_1_105_c.jpeg" alt="Image 1">
+            <div class="box-content">
+                <h3>fsjdncsjdk</h3>
+                <p>dsfcdsfcdsfd</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="IMG_1779.JPG" alt="Image 2">
+            <div class="box-content">
+                <h3>fsdcf</h3>
+                <p>sdfacadsadfvs</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="A8B1AFC5-0210-4866-94DA-E5FFFFB0D8F8_1_105_c.jpeg" alt="Image 3">
+            <div class="box-content">
+                <h3>sabhadc</h3>
+                <p>esdefdfr</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
