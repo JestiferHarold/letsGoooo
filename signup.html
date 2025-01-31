@@ -48,18 +48,18 @@
       const password = document.getElementById('password').value;
       const confirmPassword = document.getElementById('confirm-password').value;
 
-      // Check if passwords match
+     
       if (password !== confirmPassword) {
         alert("Passwords do not match!");
         return;
       }
 
-      // If OTP hasn't been shown, display the OTP box
+      
       if (!otpShown) {
         document.querySelector('.otp-box').style.display = 'block';
         otpShown = true;
       } else {
-        // Simulate success and redirect to the login page
+       
         alert("Signup successful! Redirecting...");
         window.location.href = "login.html"; 
       }

@@ -9,6 +9,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 .video-background {
     position: fixed;
@@ -199,6 +200,22 @@ nav {
     font-size: 14px;
     color: white;
 }
+.explore-link {
+    text-decoration: none;
+    color: white;
+    padding: 10px 30px;
+    border: 2px solid whitesmoke; 
+    border-radius: 30px; 
+    font-size: 18px;
+    font-weight: 600;
+   
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.explore-link:hover {
+    background-color: white; 
+    color: black;
+}
 </style>
 </head>
 <body>
@@ -209,7 +226,7 @@ nav {
     <header>
         <nav>
             <div class="logo-container">
-                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="50" viewBox="0 0 800 200">
+                <a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="150" height="50" viewBox="0 0 800 200">
                     <defs>
                         <linearGradient id="vamoosGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" style="stop-color:#FFFFFF; stop-opacity:1" />
@@ -220,13 +237,13 @@ nav {
                     <text x="10" y="150" font-family="Arial, sans-serif" font-size="140" font-weight="bold" fill="#FFFFFF">
                         Podham..!!!
                     </text>
-                </svg>
+                </svg></a>
             </div>
             <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="index.html" target="_blank">Home</a></li>
+                <li><a href="about.html" target="_blank">About</a></li>
+                <li><a href="login.html" target="_blank">Login</a></li>
+                <li><a href="signup.html" target="_blank">Sign Up</a></li>
             </ul>
         </nav>
     </header>
@@ -235,9 +252,10 @@ nav {
         <div class="heading">
             <h1>Welcome to the world of travelling with us.</h1>
             <p>Explore the world with us and make your journey memorable.</p>
+            <a href="#container" class="explore-link">Explore Now</a>
         </div>
     </main>
-    <div class="container">
+    <div class="container" id="container">
         <div class="box">
             <img src="9F9CF86F-F5EA-4B8E-9AB7-7267A5CAE016_1_105_c.jpeg" alt="Image 1">
             <div class="box-content">
@@ -262,6 +280,15 @@ nav {
             </div>
         </div>
     </div>
-
+    <footer>
+        <p>&copy; 2023 Travelling with us. All rights reserved.</p>
+    </footer>
+    <script>
+        window.onload = function() {
+            if (window.location.hash === "#container") {
+                history.replaceState("", document.title, window.location.pathname);
+            }
+        };
+    </script>
 </body>
 </html>
