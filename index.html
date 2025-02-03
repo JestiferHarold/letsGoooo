@@ -4,232 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Letss Goo</title>
-    <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-.video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-nav {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background-color: transparent;
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-    gap: 35px;
-}
-
-.nav-list li {
-    position: relative;
-}
-
-.nav-list li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.nav-list li a:hover {
-    color: #ff5733;
-    transform: scale(1.1);
-}
-
-.nav-list li::before {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: #ff5733;
-    transition: width 0.4s ease, left 0.4s ease;
-}
-
-.nav-list li:hover::before {
-    width: 100%;
-    left: 0;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
-.logo-container svg {
-    height: 50px;
-    margin-right: 10px;
-}
-.heading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-size: 64px;
-    font-weight: 700;
-    color: whitesmoke;
-    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
-    animation: fadeIn 2s ease-in-out;
-    z-index: 10;
-}
-
-.heading h1 {
-    font-size: 64px;
-    margin-bottom: 20px;
-}
-
-.heading p {
-    font-size: 26px;
-    font-weight: 300;
-    color: whitesmoke;
-    margin-bottom: 30px;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .nav-list {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .nav-list li a {
-        font-size: 16px;
-    }
-
-    .heading h1 {
-        font-size: 45px;
-    }
-
-    .heading p {
-        font-size: 22px;
-    }
-
-    .btn {
-        font-size: 16px;
-        padding: 10px 30px;
-    }
-}
-.container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 200px;
-    margin-top: 1100px; 
-}
-.box {
-    width: 350px;
-    height: 500px;
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    backdrop-filter: blur(5px);
-    margin: 20px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.box img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out; 
-}
-
-.box:hover img {
-    transform: scaleY(1.8);
-}
-
-.box-content {
-    padding: 10px;
-    font-family: Arial, sans-serif;
-    position: relative;
-    z-index: 10;
-}
-
-.box h3 {
-    margin: 10px 0;
-    font-size: 18px;
-    color: white;
-}
-
-.box p {
-    font-size: 14px;
-    color: white;
-}
-.explore-link {
-    text-decoration: none;
-    color: white;
-    padding: 10px 30px;
-    border: 2px solid whitesmoke; 
-    border-radius: 30px; 
-    font-size: 18px;
-    font-weight: 600;
-   
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.explore-link:hover {
-    background-color: white; 
-    color: black;
-}
-footer {
-    backdrop-filter: blur(5px);
-    color: white;
-    padding: 100px;
-    width: 100%;
-}
-footer h5 {
-
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 24px;
-    color: white;
-    margin-bottom: 100px;
-}
-</style>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <video autoplay muted loop class="video-background">
@@ -248,7 +23,7 @@ footer h5 {
                         </linearGradient>
                     </defs>
                     <text x="10" y="150" font-family="Arial, sans-serif" font-size="140" font-weight="bold" fill="#FFFFFF">
-                        Podham..!!!
+                        Letss Gooo
                     </text>
                 </svg></a>
             </div>
@@ -263,36 +38,50 @@ footer h5 {
     
     <main>
         <div class="heading">
-            <h1>Welcome to the world of travelling with us.</h1>
-            <p>Explore the world with us and make your journey memorable.</p>
+            <h1>Turn every journey into a story worth telling.<br> Let's create memories that last a lifetime</h1>
             <a href="#container" class="explore-link">Explore Now</a>
         </div>
     </main>
     <div class="container" id="container">
         <div class="box">
-            <img src="9F9CF86F-F5EA-4B8E-9AB7-7267A5CAE016_1_105_c.jpeg" alt="Image 1">
+            <img src="https://plus.unsplash.com/premium_photo-1663047758536-f23d444440a7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8QUklMjB0cmF2ZWwlMjBwbGFubmluZyUyMGRhcmt8ZW58MHwwfDB8fHww" alt="Image 1">
             <div class="box-content">
-                <h3>fsjdncsjdk</h3>
-                <p>dsfcdsfcdsfd</p>
+                <h3>AI-Powered Trip Planning</h3>
+                <p>Our smart AI helps you craft the perfect itinerary by considering your preferences, budget, and travel style—so you can focus on making memories.</p>
             </div>
         </div>
 
         <div class="box">
-            <img src="IMG_1779.JPG" alt="Image 2">
+            <img src="https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Image 2">
             <div class="box-content">
-                <h3>fsdcf</h3>
-                <p>sdfacadsadfvs</p>
+                <h3>Personalized Travel Plans</h3>
+                <p>Our AI analyzes your preferences and creates a unique travel itinerary just for you—whether you love adventure, culture, or relaxation.</p>
             </div>
         </div>
 
         <div class="box">
-            <img src="A8B1AFC5-0210-4866-94DA-E5FFFFB0D8F8_1_105_c.jpeg" alt="Image 3">
+            <img src="https://images.pexels.com/photos/7009477/pexels-photo-7009477.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Image 3">
             <div class="box-content">
-                <h3>sabhadc</h3>
-                <p>esdefdfr</p>
+                <h3>Smart Budgeting</h3>
+                <p>Our AI ensures you get the best trip within your budget by finding affordable flights, hotels, and experiences while maximizing fun.</p>
             </div>
         </div>
-    </div><div>
+    </div>
+    <div class="contentcontainer">
+        <h1>About Us</h1>
+        <p>Welcome to Letss Goo, your ultimate AI-powered travel companion! Our mission is to revolutionize the way you plan and experience travel. Whether you're an adventure seeker, a cultural explorer, or a leisure traveler, our AI-driven itinerary planner curates the perfect trip tailored to your preferences, budget, and style.</p>
+        <p>With smart budgeting, real-time recommendations, and a seamless user experience, we ensure that every journey you take is stress-free and memorable. Letss Goo empowers you with intelligent trip planning, personalized recommendations, and hassle-free organization, all in one place.</p>
+        <p>Start your journey with us today and transform every trip into an unforgettable story!</p>
+        <p>Welcome to Letss Goo, your ultimate AI-powered travel companion! Our mission is to revolutionize the way you plan and experience travel. Whether you're an adventure seeker, a cultural explorer, or a leisure traveler, our AI-driven itinerary planner curates the perfect trip tailored to your preferences, budget, and style.</p>
+        <p>With smart budgeting, real-time recommendations, and a seamless user experience, we ensure that every journey you take is stress-free and memorable. Letss Goo empowers you with intelligent trip planning, personalized recommendations, and hassle-free organization, all in one place.</p>
+        <p>Start your journey with us today and transform every trip into an unforgettable story!</p>
+        <p>Welcome to Letss Goo, your ultimate AI-powered travel companion! Our mission is to revolutionize the way you plan and experience travel. Whether you're an adventure seeker, a cultural explorer, or a leisure traveler, our AI-driven itinerary planner curates the perfect trip tailored to your preferences, budget, and style.</p>
+        <p>With smart budgeting, real-time recommendations, and a seamless user experience, we ensure that every journey you take is stress-free and memorable. Letss Goo empowers you with intelligent trip planning, personalized recommendations, and hassle-free organization, all in one place.</p>
+        <p>Start your journey with us today and transform every trip into an unforgettable story!</p>
+    
+    </div>
+    
+    
     <footer>
         <span>
         <h5>Letss Goo</h2>
