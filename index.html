@@ -4,7 +4,269 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Letss Goo</title>
-  <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+    
+    nav {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        background-color: transparent;
+    }
+    
+    .nav-list {
+        list-style: none;
+        display: flex;
+        gap: 35px;
+    }
+    
+    .nav-list li {
+        position: relative;
+    }
+    
+    .nav-list li a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: color 0.3s ease, transform 0.3s ease;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .nav-list li a:hover {
+        color: #ff5733;
+        transform: scale(1.1);
+    }
+    
+    .nav-list li::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: #ff5733;
+        transition: width 0.4s ease, left 0.4s ease;
+    }
+    
+    .nav-list li:hover::before {
+        width: 100%;
+        left: 0;
+    }
+    
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+    
+    .logo-container svg {
+        height: 50px;
+        margin-right: 10px;
+    }
+    .heading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 64px;
+        font-weight: 700;
+        color: whitesmoke;
+        text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+        animation: fadeIn 2s ease-in-out;
+        z-index: 10;
+    }
+    
+    .heading h1 {
+        font-size: 34px;
+        margin-bottom: 20px;
+    }
+    
+    .heading p {
+        font-size: 26px;
+        font-weight: 300;
+        color: whitesmoke;
+        margin-bottom: 30px;
+    }
+    
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        nav {
+            flex-direction: column;
+            padding: 20px;
+        }
+    
+        .nav-list {
+            flex-direction: column;
+            gap: 20px;
+        }
+    
+        .nav-list li a {
+            font-size: 16px;
+        }
+    
+        .heading h1 {
+            font-size: 45px;
+        }
+    
+        .heading p {
+            font-size: 22px;
+        }
+    
+        .btn {
+            font-size: 16px;
+            padding: 10px 30px;
+        }
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 300px;
+        margin-top: 1100px; 
+    }
+    .box {
+        width: 350px;
+        height: 500px;
+        border-radius: 15px;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        backdrop-filter: blur(5px);
+        margin: 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    .box:hover {
+        transform: translateY(-30px);
+    }
+    .box img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out; 
+    }
+    
+    .box:hover img {
+        transform: scale(1.35);
+    }
+    
+    .box-content {
+        padding: 10px;
+        font-family: Arial, sans-serif;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .box h3 {
+        margin: 10px 0;
+        font-size: 18px;
+        color: white;
+    }
+    
+    .box p {
+        font-size: 14px;
+        color: white;
+    }
+    .explore-link {
+        text-decoration: none;
+        color: white;
+        padding: 10px 30px;
+        border: 2px solid whitesmoke; 
+        border-radius: 30px; 
+        font-size: 18px;
+        font-weight: 600;
+       
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .explore-link:hover {
+        background-color: white; 
+        color: black;
+    }
+    footer {
+        backdrop-filter: blur(5px);
+        color: white;
+        padding: 100px;
+        width: 100%;
+    }
+    footer h5 {
+    
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 24px;
+        color: white;
+        margin-bottom: 100px;
+    }
+        .contentcontainer {
+            width: 80%;
+            height: 60%;
+            border: 1px  white solid ;
+            margin: 100px auto;
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .contentcontainer h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .contentcontainer p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .nav-list li a, .explore-link {
+            font-family: 'Raleway', sans-serif;
+        }
+        h1, h2, h3, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+    </style>
 </head>
 <body>
     <video autoplay muted loop class="video-background">
@@ -23,7 +285,7 @@
                         </linearGradient>
                     </defs>
                     <text x="10" y="150" font-family="Arial, sans-serif" font-size="140" font-weight="bold" fill="#FFFFFF">
-                        Letss Gooo
+                        Letss Goo
                     </text>
                 </svg></a>
             </div>
@@ -39,7 +301,7 @@
     <main>
         <div class="heading">
             <h1>Turn every journey into a story worth telling.<br> Let's create memories that last a lifetime</h1>
-            <a href="#container" class="explore-link">Explore Now</a>
+            <a href="#ks" class="explore-link">Explore Now</a>
         </div>
     </main>
     <div class="container" id="container">
@@ -67,18 +329,23 @@
             </div>
         </div>
     </div>
-    <div class="contentcontainer">
+    <div class="contentcontainer" id="ks">
         <h1>About Us</h1>
-        <p>Welcome to Letss Goo, your ultimate AI-powered travel companion! Our mission is to revolutionize the way you plan and experience travel. Whether you're an adventure seeker, a cultural explorer, or a leisure traveler, our AI-driven itinerary planner curates the perfect trip tailored to your preferences, budget, and style.</p>
-        <p>With smart budgeting, real-time recommendations, and a seamless user experience, we ensure that every journey you take is stress-free and memorable. Letss Goo empowers you with intelligent trip planning, personalized recommendations, and hassle-free organization, all in one place.</p>
-        <p>Start your journey with us today and transform every trip into an unforgettable story!</p>
-        <p>Welcome to Letss Goo, your ultimate AI-powered travel companion! Our mission is to revolutionize the way you plan and experience travel. Whether you're an adventure seeker, a cultural explorer, or a leisure traveler, our AI-driven itinerary planner curates the perfect trip tailored to your preferences, budget, and style.</p>
-        <p>With smart budgeting, real-time recommendations, and a seamless user experience, we ensure that every journey you take is stress-free and memorable. Letss Goo empowers you with intelligent trip planning, personalized recommendations, and hassle-free organization, all in one place.</p>
-        <p>Start your journey with us today and transform every trip into an unforgettable story!</p>
-        <p>Welcome to Letss Goo, your ultimate AI-powered travel companion! Our mission is to revolutionize the way you plan and experience travel. Whether you're an adventure seeker, a cultural explorer, or a leisure traveler, our AI-driven itinerary planner curates the perfect trip tailored to your preferences, budget, and style.</p>
-        <p>With smart budgeting, real-time recommendations, and a seamless user experience, we ensure that every journey you take is stress-free and memorable. Letss Goo empowers you with intelligent trip planning, personalized recommendations, and hassle-free organization, all in one place.</p>
-        <p>Start your journey with us today and transform every trip into an unforgettable story!</p>
-    
+        <p><strong>Welcome to Letss Goo - Your Ultimate AI-Powered Travel Companion! 🌍✈️</strong></p>
+
+        <p>At <strong>Letss Goo</strong>, we believe that travel is more than just moving from one place to another—it’s about creating memories, embracing new cultures, and experiencing the world in a way that resonates with your heart. That’s why we are on a mission to <strong>redefine the way you plan and experience travel</strong>, making every step of your journey effortless, exciting, and uniquely tailored to your preferences.</p>
+        
+        <p>Planning a trip can be overwhelming—with so many destinations, accommodation choices, activities, and budgets to consider, the process often becomes more stressful than enjoyable. But what if there was a smarter, easier way? <strong>With Letss Goo, we bring the power of artificial intelligence to travel planning, crafting the perfect itinerary based on your interests, budget, and travel style.</strong></p>
+        
+        <p>Whether you're an <strong>adventure seeker</strong> yearning to hike up majestic mountains, a <strong>cultural explorer</strong> fascinated by ancient landmarks and local traditions, or a <strong>leisure traveler</strong> dreaming of serene beach getaways, our AI-driven system ensures that every trip is customized just for you.</p>
+        
+        <p>Our intelligent technology takes care of all the heavy lifting. It analyzes your travel preferences, desired destinations, budget constraints, accommodation choices, and even your food preferences, curating a **personalized itinerary** that maximizes your experience while eliminating the hassle of manual research. From finding the best flight deals to suggesting hidden gems and must-visit attractions, <strong>Letss Goo makes planning effortless so you can focus on making unforgettable memories.</strong></p>
+        
+        <p>But that's not all! Our system continuously updates in real-time, providing **smart recommendations, alternate routes, and budget-friendly options** to ensure flexibility throughout your journey. No more last-minute scrambling or rigid plans—**your itinerary adapts to you, not the other way around.**</p>
+        
+        <p>Say goodbye to spending countless hours navigating travel blogs, comparing hotels, and figuring out logistics. <strong>Letss Goo empowers you</strong> with seamless organization, hassle-free planning, and expert-level travel insights, all in one easy-to-use platform.</p>
+        
+        <p>So why wait? <strong>Start your adventure today with Letss Goo</strong> and transform every journey into an extraordinary story worth telling. **The world is waiting—let’s go explore! 🚀🌎**</p>
     </div>
     
     
@@ -88,11 +355,18 @@
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis dolorum autem atque, repudiandae molestias aut omnis, asperiores voluptate, quidem labore molestiae cupiditate. Officiis, ullam animi. Quasi minus magnam alias veritatis.</p></spam>
     </footer></div>
     <script>
-        window.onload = function() {
-            if (window.location.hash === "#container") {
-                history.replaceState("", document.title, window.location.pathname);
-            }
-        };
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(".explore-link").addEventListener("click", function(event) {
+                event.preventDefault(); 
+    
+                const container = document.getElementById("container");
+    
+                container.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+            });
+        });
     </script>
 </body>
 </html>

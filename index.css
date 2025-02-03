@@ -146,7 +146,7 @@ nav {
 .container {
     display: flex;
     justify-content: center;
-    margin-bottom: 200px;
+    margin-bottom: 300px;
     margin-top: 1100px; 
 }
 .box {
@@ -228,11 +228,10 @@ footer h5 {
     .contentcontainer {
         width: 80%;
         height: 60%;
-        border: 2px solid white;
+        border: 1px  white solid ;
         margin: 100px auto;
         padding: 30px;
         border-radius: 15px;
-        /* background: rgba(255, 255, 255, 0.2); */
         backdrop-filter: blur(10px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         text-align: center;
