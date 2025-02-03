@@ -4,269 +4,346 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Letss Goo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
 
-    <style>* {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        scroll-behavior: smooth;
-    }
-    body {
-        font-family: 'Inter', sans-serif;
-    }
-    .video-background {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-    }
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-    }
-    
-    nav {
-        margin-top: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 40px;
-        background-color: transparent;
-    }
-    
-    .nav-list {
-        list-style: none;
-        display: flex;
-        gap: 35px;
-    }
-    
-    .nav-list li {
-        position: relative;
-    }
-    
-    .nav-list li a {
-        text-decoration: none;
-        color: #ffffff;
-        font-size: 18px;
-        font-weight: 500;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        transition: color 0.3s ease, transform 0.3s ease;
-        font-family: 'Montserrat', sans-serif;
-    }
-    
-    .nav-list li a:hover {
-        color: #ff5733;
-        transform: scale(1.1);
-    }
-    
-    .nav-list li::before {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 50%;
-        width: 0;
-        height: 2px;
-        background: #ff5733;
-        transition: width 0.4s ease, left 0.4s ease;
-    }
-    
-    .nav-list li:hover::before {
-        width: 100%;
-        left: 0;
-    }
-    
-    .logo-container {
-        display: flex;
-        align-items: center;
-    }
-    
-    .logo-container svg {
-        height: 50px;
-        margin-right: 10px;
-    }
-    .heading {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        font-size: 64px;
-        font-weight: 700;
-        color: whitesmoke;
-        text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
-        animation: fadeIn 2s ease-in-out;
-        z-index: 10;
-    }
-    
-    .heading h1 {
-        font-size: 34px;
-        margin-bottom: 20px;
-    }
-    
-    .heading p {
-        font-size: 26px;
-        font-weight: 300;
-        color: whitesmoke;
-        margin-bottom: 30px;
-    }
-    
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
-        100% {
-            opacity: 1;
+        body {
+            font-family: 'Inter', sans-serif;
         }
-    }
-    
-    @media (max-width: 768px) {
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        
         nav {
-            flex-direction: column;
-            padding: 20px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: transparent;
         }
-    
+        
         .nav-list {
-            flex-direction: column;
-            gap: 20px;
+            list-style: none;
+            display: flex;
+            gap: 35px;
         }
-    
+        
+        .nav-list li {
+            position: relative;
+        }
+        
         .nav-list li a {
-            font-size: 16px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease, transform 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
         }
-    
-        .heading h1 {
-            font-size: 45px;
+        
+        .nav-list li a:hover {
+            color: #ff5733;
+            transform: scale(1.1);
         }
-    
-        .heading p {
-            font-size: 22px;
+        
+        .nav-list li::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #ff5733;
+            transition: width 0.4s ease, left 0.4s ease;
         }
-    
-        .btn {
-            font-size: 16px;
-            padding: 10px 30px;
+        
+        .nav-list li:hover::before {
+            width: 100%;
+            left: 0;
         }
-    }
-    .container {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 300px;
-        margin-top: 1100px; 
-    }
-    .box {
-        width: 350px;
-        height: 500px;
-        border-radius: 15px;
-        overflow: hidden;
-        border: 1px solid #ccc;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        backdrop-filter: blur(5px);
-        margin: 20px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-    
-    .box:hover {
-        transform: translateY(-30px);
-    }
-    .box img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        transition: transform 0.3s ease-in-out; 
-    }
-    
-    .box:hover img {
-        transform: scale(1.35);
-    }
-    
-    .box-content {
-        padding: 10px;
-        font-family: Arial, sans-serif;
-        position: relative;
-        z-index: 10;
-    }
-    
-    .box h3 {
-        margin: 10px 0;
-        font-size: 18px;
-        color: white;
-    }
-    
-    .box p {
-        font-size: 14px;
-        color: white;
-    }
-    .explore-link {
-        text-decoration: none;
-        color: white;
-        padding: 10px 30px;
-        border: 2px solid whitesmoke; 
-        border-radius: 30px; 
-        font-size: 18px;
-        font-weight: 600;
-       
-        transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    
-    .explore-link:hover {
-        background-color: white; 
-        color: black;
-    }
-    footer {
-        backdrop-filter: blur(5px);
-        color: white;
-        padding: 100px;
-        width: 100%;
-    }
-    footer h5 {
-    
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 24px;
-        color: white;
-        margin-bottom: 100px;
-    }
-        .contentcontainer {
-            width: 80%;
-            height: 60%;
-            border: 1px  white solid ;
-            margin: 100px auto;
-            padding: 30px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-container svg {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .heading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-            color: white;
-            font-family: Arial, sans-serif;
+            font-size: 64px;
+            font-weight: 700;
+            color: whitesmoke;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s ease-in-out;
+            z-index: 10;
         }
-        .contentcontainer h1 {
-            font-size: 28px;
+        
+        .heading h1 {
+            font-size: 34px;
             margin-bottom: 20px;
         }
-        .contentcontainer p {
+        
+        .heading p {
+            font-size: 26px;
+            font-weight: 300;
+            color: whitesmoke;
+            margin-bottom: 30px;
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 20px;
+            }
+        
+            .nav-list {
+                flex-direction: column;
+                gap: 20px;
+            }
+        
+            .nav-list li a {
+                font-size: 16px;
+            }
+        
+            .heading h1 {
+                font-size: 45px;
+            }
+        
+            .heading p {
+                font-size: 22px;
+            }
+        
+            .btn {
+                font-size: 16px;
+                padding: 10px 30px;
+            }
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 300px;
+            margin-top: 1100px; 
+        }
+        .box {
+            width: 350px;
+            height: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            backdrop-filter: blur(5px);
+            margin: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        
+        .box:hover {
+            transform: translateY(-20px) scale(1.05);
+        }
+        .box img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.4s ease-in-out; 
+        }
+        
+        .box:hover img {
+            transform: scale(1.35);
+        }
+        
+        .box-content {
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .box h3 {
+            margin: 10px 0;
             font-size: 18px;
-            line-height: 1.6;
-            text-align: justify;
+            color: white;
         }
-        .nav-list li a, .explore-link {
-            font-family: 'Raleway', sans-serif;
+        
+        .box p {
+            font-size: 14px;
+            color: white;
         }
-        h1, h2, h3, h5 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
+        .explore-link {
+            text-decoration: none;
+            color: white;
+            padding: 10px 30px;
+            border: 2px solid whitesmoke; 
+            border-radius: 30px; 
+            font-size: 18px;
+            font-weight: 600;
+           
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-    </style>
+        
+        .explore-link:hover {
+            background-color: white; 
+            color: black;
+        }
+        footer {
+            backdrop-filter: blur(5px);
+            color: white;
+            padding: 100px;
+            width: 100%;
+        }
+        footer h5 {
+        
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 24px;
+            color: white;
+            margin-bottom: 100px;
+        }
+            .contentcontainer {
+                width: 80%;
+                height: 60%;
+                border: 1px  white solid ;
+                margin: 100px auto;
+                padding: 30px;
+                border-radius: 15px;
+                backdrop-filter: blur(10px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                text-align: center;
+                color: white;
+                font-family: Arial, sans-serif;
+            }
+            .contentcontainer h1 {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+            .contentcontainer p {
+                font-size: 18px;
+                line-height: 1.6;
+                text-align: justify;
+            }
+            .nav-list li a, .explore-link {
+                font-family: 'Raleway', sans-serif;
+            }
+            h1, h2, h3, h5 {
+                font-family: 'Playfair Display', serif;
+                font-weight: 700;
+            }
+            footer {
+        width: 100%;
+        padding: 60px 20px;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(8px);
+        color: white;
+        text-align: center;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin: 20px;
+    }
+
+    .footer-section h2, 
+    .footer-section h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .footer-section p,
+    .footer-section ul {
+        font-size: 16px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-section ul li {
+        margin: 8px 0;
+    }
+
+    .footer-section ul li a {
+        text-decoration: none;
+        color: white;
+        transition: color 0.3s ease;
+    }
+
+    .footer-section ul li a:hover {
+        color: #ff5733;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .social-icons img {
+        width: 30px;
+        transition: transform 0.3s ease;
+    }
+
+    .social-icons img:hover {
+        transform: scale(1.2);
+    }
+
+    .footer-bottom {
+        margin-top: 20px;
+        font-size: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 10px;
+    }
+</style>
 </head>
 <body>
     <video autoplay muted loop class="video-background">
@@ -285,7 +362,7 @@
                         </linearGradient>
                     </defs>
                     <text x="10" y="150" font-family="Arial, sans-serif" font-size="140" font-weight="bold" fill="#FFFFFF">
-                        Letss Goo
+                        Lesss Goo
                     </text>
                 </svg></a>
             </div>
@@ -331,29 +408,63 @@
     </div>
     <div class="contentcontainer" id="ks">
         <h1>About Us</h1>
-        <p><strong>Welcome to Letss Goo - Your Ultimate AI-Powered Travel Companion! 🌍✈️</strong></p>
 
-        <p>At <strong>Letss Goo</strong>, we believe that travel is more than just moving from one place to another—it’s about creating memories, embracing new cultures, and experiencing the world in a way that resonates with your heart. That’s why we are on a mission to <strong>redefine the way you plan and experience travel</strong>, making every step of your journey effortless, exciting, and uniquely tailored to your preferences.</p>
-        
-        <p>Planning a trip can be overwhelming—with so many destinations, accommodation choices, activities, and budgets to consider, the process often becomes more stressful than enjoyable. But what if there was a smarter, easier way? <strong>With Letss Goo, we bring the power of artificial intelligence to travel planning, crafting the perfect itinerary based on your interests, budget, and travel style.</strong></p>
-        
-        <p>Whether you're an <strong>adventure seeker</strong> yearning to hike up majestic mountains, a <strong>cultural explorer</strong> fascinated by ancient landmarks and local traditions, or a <strong>leisure traveler</strong> dreaming of serene beach getaways, our AI-driven system ensures that every trip is customized just for you.</p>
-        
-        <p>Our intelligent technology takes care of all the heavy lifting. It analyzes your travel preferences, desired destinations, budget constraints, accommodation choices, and even your food preferences, curating a **personalized itinerary** that maximizes your experience while eliminating the hassle of manual research. From finding the best flight deals to suggesting hidden gems and must-visit attractions, <strong>Letss Goo makes planning effortless so you can focus on making unforgettable memories.</strong></p>
-        
-        <p>But that's not all! Our system continuously updates in real-time, providing **smart recommendations, alternate routes, and budget-friendly options** to ensure flexibility throughout your journey. No more last-minute scrambling or rigid plans—**your itinerary adapts to you, not the other way around.**</p>
-        
-        <p>Say goodbye to spending countless hours navigating travel blogs, comparing hotels, and figuring out logistics. <strong>Letss Goo empowers you</strong> with seamless organization, hassle-free planning, and expert-level travel insights, all in one easy-to-use platform.</p>
-        
-        <p>So why wait? <strong>Start your adventure today with Letss Goo</strong> and transform every journey into an extraordinary story worth telling. **The world is waiting—let’s go explore! 🚀🌎**</p>
+        <p><strong>Welcome to Letss Goo - Your AI-Powered Travel Architect! 🌍✈️</strong></p>
+
+        <p>At <strong>Letss Goo</strong>, we believe travel is more than just a journey—it’s a tapestry of unforgettable moments, cultural immersion, and thrilling experiences. Our mission is to <strong>revolutionize the way you plan and explore the world</strong> by making your trips seamless, exhilarating, and uniquely tailored to your desires.</p>
+
+        <p>Trip planning can often feel overwhelming—endless choices for destinations, accommodations, and activities can turn excitement into stress. But what if crafting the perfect itinerary was effortless? <strong>With Letss Goo, artificial intelligence curates a travel experience that aligns perfectly with your preferences, budget, and style.</strong></p>
+
+        <p>Whether you're an <strong>adrenaline junkie</strong> conquering rugged peaks, a <strong>cultural connoisseur</strong> tracing the echoes of history, or a <strong>tranquil traveler</strong> seeking serene coastal escapes, our AI-driven system crafts an itinerary that caters exclusively to you.</p>
+
+        <p>Our intelligent engine handles the complexities—analyzing your interests, budget, and even dietary preferences to design a <strong>personalized itinerary</strong> that maximizes your adventure while eliminating the hassle of tedious research. From securing unbeatable flight deals to unveiling hidden gems, <strong>Letss Goo streamlines the process, allowing you to focus on creating unforgettable memories.</strong></p>
+
+        <p>But we go beyond static itineraries. Our dynamic AI continually updates in real-time, offering <strong>smart recommendations, adaptive routes, and budget-friendly alternatives</strong>, ensuring that your journey remains flexible and stress-free. Say goodbye to rigid plans—<strong>your itinerary evolves with you.</strong></p>
+
+        <p>No more endless scrolling through travel blogs or juggling logistics. <strong>Letss Goo empowers you</strong> with seamless organization, intuitive planning, and expert-level insights—all within a single, user-friendly platform.</p>
+
+        <p>So why hesitate? <strong>Embark on your next adventure with Letss Goo</strong> and turn every trip into an extraordinary story waiting to be told. <strong>The world awaits—Let's Go! 🚀🌎</strong></p>
     </div>
-    
-    
     <footer>
-        <span>
-        <h5>Letss Goo</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis dolorum autem atque, repudiandae molestias aut omnis, asperiores voluptate, quidem labore molestiae cupiditate. Officiis, ullam animi. Quasi minus magnam alias veritatis.</p></spam>
-    </footer></div>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>Lesss Goo</h2>
+                <p>Your AI-powered travel architect—turning your journeys into seamless, unforgettable adventures.</p>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@letssgoo.com</p>
+                <p>Phone: +1 234 567 890</p>
+                <p>Address: 123 Travel St, Wanderlust City, Earth</p>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="facebook-icon.svg" alt="Facebook"></a>
+                    <a href="#"><img src="twitter-icon.svg" alt="Twitter"></a>
+                    <a href="#"><img src="instagram-icon.svg" alt="Instagram"></a>
+                    <a href="#"><img src="linkedin-icon.svg" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 Letss Goo. All rights reserved.</p>
+        </div>
+    </footer>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             document.querySelector(".explore-link").addEventListener("click", function(event) {

@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+}
+body {
+    font-family: 'Inter', sans-serif;
 }
 .video-background {
     position: fixed;
@@ -48,6 +53,7 @@ nav {
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: color 0.3s ease, transform 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .nav-list li a:hover {
@@ -166,17 +172,17 @@ nav {
 }
 
 .box:hover {
-    transform: translateY(-50px);
+    transform: translateY(-20px) scale(1.05);
 }
 .box img {
     width: 100%;
     height: 300px;
     object-fit: cover;
-    transition: transform 0.3s ease-in-out; 
+    transition: transform 0.4s ease-in-out; 
 }
 
 .box:hover img {
-    transform: scale(1.3);
+    transform: scale(1.35);
 }
 
 .box-content {
@@ -246,4 +252,11 @@ footer h5 {
         font-size: 18px;
         line-height: 1.6;
         text-align: justify;
+    }
+    .nav-list li a, .explore-link {
+        font-family: 'Raleway', sans-serif;
+    }
+    h1, h2, h3, h5 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
     }
