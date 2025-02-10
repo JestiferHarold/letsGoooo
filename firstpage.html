@@ -4,19 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Styled Form with Background</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
+
+        * {
+            scroll-behavior: smooth;
+        }
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
         }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
 
-
-        .hero-section {
+        .top {
             position: relative;
             width: 100%;
             height: 80vh; 
-            background: url(https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzY4fHx0cmF2ZWx8ZW58MHx8MHx8fDA%3D) no-repeat center center/cover;
+            border-radius: 50%;
+            /* background: url(https://images.pexels.com/photos/2902747/pexels-photo-2902747.jpeg?auto=compress&cs=tinysrgb&w=1200) no-repeat center center/cover; */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -31,7 +46,7 @@
             background: transparent;
             border: 5px solid white;
             border-radius: 30px;
-            padding: 5px 25vw;
+            padding: 5px 30vw;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -50,9 +65,9 @@
 
 
         .nav-list li a {
-            color: white;
+            color: wheat;
             text-decoration: none;
-            font-size: 20px; 
+            font-size: 25px; 
             font-weight: bold;
             padding: 12px 20px;
         }
@@ -64,7 +79,7 @@
         }
         .form-container {
             position: absolute;
-            top: 100%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             background: white;
@@ -116,7 +131,102 @@
         .nav-list li:hover .dropdown {
             display: block;
         }
-        
+        .box-content {
+            padding: 50px;
+            margin: 300px 50px 50px 50px;
+            background-color: bisque;
+            box-shadow: rgba(0, 0, 0, 0.2);
+            border: 2px solid black;
+            color: red;
+            font-family: 'Merriweather';
+        }
+        footer {
+            width: 100%;
+            padding: 60px 2px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            color: white;
+            text-align: center;
+            }
+
+            .footer-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: center;
+                max-width: 1200px;
+                margin: auto;
+            }
+
+            .footer-section {
+                flex: 1;
+                min-width: 250px;
+                margin: 20px;
+            }
+
+            .footer-section h2, 
+            .footer-section h3 {
+                font-family: 'Playfair Display', serif;
+               font-size: 22px;
+                margin-bottom: 10px;
+                }
+
+            .footer-section p,
+            .footer-section ul {
+                font-size: 16px;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            .footer-section ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .footer-section ul li {
+                margin: 8px 0;
+            }
+
+            .footer-section ul li a {
+                text-decoration: none;
+                color: white;
+                transition: color 0.3s ease;
+            }
+
+            .footer-section ul li a:hover {
+                color: #ff5733;
+            }
+
+            .social-icons {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            .social-icons img {
+                width: 30px;
+                transition: transform 0.3s ease;
+            }
+
+            .social-icons img:hover {
+                transform: scale(1.2);
+            }
+
+            .footer-bottom {
+                margin-top: 20px;
+                font-size: 14px;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                padding-top: 10px;
+            }
+            .footer-section a {
+                color: white;
+                text-decoration: none;
+                line-height: 30px;
+            }
+            .footer-section a:hover {
+                color: #ff5733;
+            }
 
         @media (max-width: 768px) {
             .form-container {
@@ -130,21 +240,24 @@
     </style>
 </head>
 <body>
-
-    <div class="hero-section">
+    <video autoplay muted loop class="video-background">
+        <source src="vecteezy_airplane-route-the-plane-hovered-on-the-dotted-line-travel_15510116.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="top">
     
         <nav class="nav-container">
             <ul class="nav-list">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><img src="logo.png" alt=""></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#cu">Contact</a></li>
                 <li>
                     <a href="#">Bhargav </a>
-                    <div class="dropdown">
+                    <!-- <div class="dropdown">
                         <a href="#">Account</a>
                         <a href="#">Sign Out</a>
-                    </div>
+                    </div> -->
                 </li>
             </ul>
         </nav>
@@ -152,15 +265,15 @@
 
         <form class="form-container">
             <fieldset>
-                <legend>Starting Point</legend>
+                <legend>Starting Point 🛫</legend>
             <input type="text" placeholder="Enter Your Starting Point"></fieldset>
-            <fieldset><legend>Destination</legend>
+            <fieldset><legend>Destination 🛬</legend>
             <input type="text" placeholder="Enter Your Destination"></fieldset>
-            <fieldset><legend>Number of People</legend>
+            <fieldset><legend>Number of People 💁🏻‍♂️</legend>
             <input type="number" placeholder="Count"></fieldset>
-            <fieldset><legend>Budget</legend>
-            <input type="number" placeholder="Enter the amount" ></fieldset>
-            <fieldset><legend>Choose a Trip Type:</legend>
+            <fieldset><legend>Budget 💸</legend>
+            <input type="number" min="0" step="1000" placeholder="Enter the amount" ></fieldset>
+            <fieldset><legend>Choose a Trip Type: ✈️</legend>
             <select id="trip-type" name="trip-type">
                 <option value="" selected>Trip Type</option>
                 <option value="family">Family</option>
@@ -171,6 +284,59 @@
             </select></fieldset>
         </form>
     </div>
-
+    <div class="box-content">
+        <h1>About US</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, libero accusantium quibusdam magni deserunt sapiente repellat, quod, facere laborum sunt voluptas nisi quam nihil ut cumque aliquid? Quod, neque reprehenderit?
+        Mollitia, odit veritatis repellendus autem illo earum voluptate suscipit placeat. Reiciendis, obcaecati. Placeat totam velit vitae commodi vero, voluptatum doloremque. Illo dicta dolorum voluptas excepturi deserunt iste consequuntur ipsa fugit!
+        Aliquam at voluptatem, hic distinctio quia recusandae maiores, sit soluta explicabo autem molestias et veniam nihil in repudiandae odio labore doloribus? Repudiandae possimus laboriosam magnam ad laudantium incidunt alias illo!
+        Commodi temporibus cupiditate distinctio nam debitis reprehenderit eveniet aliquid molestiae obcaecati ad quo minus provident, illo ea iusto! Corporis, enim vero sapiente reprehenderit pariatur blanditiis ratione nemo placeat quidem suscipit.
+        Facere maiores adipisci qui minima optio recusandae veniam sapiente, unde dicta eligendi esse nisi doloremque perferendis tempora sequi debitis similique velit soluta nihil quisquam consectetur sit alias! Id, magni pariatur.
+        Et a suscipit hic inventore non esse expedita nemo commodi, accusamus magni aliquam quia, quod in eveniet. Fugiat delectus iusto nisi, placeat deserunt dicta, nihil aliquid totam ipsum molestiae blanditiis.
+        Eos quo accusamus, laboriosam quidem molestias sunt, iste recusandae tempora necessitatibus mollitia assumenda est ratione vel omnis a hic quisquam vero voluptate, provident quasi incidunt? Impedit blanditiis provident sunt dolor.
+        Porro earum libero repudiandae animi vel incidunt maxime vitae voluptatum. Optio, voluptatem in quibusdam et accusamus mollitia iure perferendis enim. Ullam est similique illum molestiae corporis doloribus ipsum error corrupti?
+        Neque sint placeat consequuntur architecto ad unde est accusantium expedita sit laboriosam, minus culpa nemo veritatis tenetur omnis quia, voluptate iure error quo aperiam quisquam? Voluptate repellat tempore unde fuga.
+        Nihil minima, nulla assumenda at odit eum repellendus labore eligendi perspiciatis, quo odio repudiandae quasi soluta, modi omnis. A minus eos fugiat accusamus, animi vitae nisi molestiae asperiores maiores commodi!</p>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>Lesss Goo</h2>
+                <p>Your AI-powered travel architect—turning your journeys into seamless, unforgettable adventures.</p>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3 id="cu">Contact Us</h3>
+                <a href="mailto:support@lesssgoo.com"><p type="email" >Email: support@lesssgoo.com</p></a>
+                <a href="tel:+917032159698"><p>Phone: +91 7032159698</p></a>
+                <a href="https://maps.app.goo.gl/dv4zbcNXYVCHt1f38"><p>Address: Amrita Vishwa Vidyapeetham, Coimbatore, Tamil Nadu, India</p></a>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-pinterest"></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lesss Gooo. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
