@@ -125,7 +125,6 @@
             text-decoration: underline;
         }
 
-        /* Animation classes for tagline */
         .move-left {
             transform: translateX(-50px);
             opacity: 0;
@@ -140,6 +139,24 @@
             transform: translateX(0);
             opacity: 1;
         }
+        .wrapper .btn {
+            width: 100%;
+            height: 45px;
+            background: #fff;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .wrapper .btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+            color: #fff;
+        }
 
     </style>
 </head>
@@ -149,7 +166,7 @@
     </div>
     <div class="wrapper">
         <div class="form-container">
-            <form id="login-form">
+            <form id="login-form" action="index.html">
                 <h1>Login</h1>
                 <div class="input-box">
                     <input type="text" placeholder="Email or Phone" required>
@@ -157,13 +174,13 @@
                 <div class="input-box">
                     <input type="password" placeholder="Password" required>
                 </div>
-                <button type="button" class="btn">Login</button>
+                <button type="submit" class="btn">Login</button>
                 <div class="register-link">
                     <p>Don't have an account? <a href="#" onclick="toggleForms()">Sign up</a></p>
                 </div>
                 <br><br>
             </form>
-            <form id="signup-form">
+            <form id="signup-form" action="index.html">
                 <h1>Sign Up</h1>
                 <div class="input-box">
                     <input type="text" placeholder="Full Name" required>
@@ -174,7 +191,7 @@
                 <div class="input-box">
                     <input type="password" placeholder="Password" required>
                 </div>
-                <button type="button" class="btn">Sign Up</button>
+                <button type="submit" class="btn">Sign Up</button>
                 <div class="register-link">
                     <p>Already have an account? <a href="#" onclick="toggleForms()">Login</a></p>
                 </div>

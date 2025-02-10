@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Parallax Website</title>
+
+    <!-- Locomotive Scroll CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.css">
+    
+    <!-- GSAP ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Locomotive Scroll JS -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #111;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: 0.3s ease-in-out;
+        }
+
+        .navbar.scrolled {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px 50px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Smooth scrolling container */
+        .smooth-scroll {
+            overflow: hidden;
+        }
+
+        /* Parallax Section */
+        .parallax {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .bg1 {
+            background-image: url('https://source.unsplash.com/1600x900/?nature');
+        }
+
+        .bg2 {
+            background-image: url('https://source.unsplash.com/1600x900/?mountains');
+        }
+
+        /* Content Sections */
+        .content {
+            padding: 80px;
+            background: white;
+            color: black;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        h1, h2 {
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            padding: 100px;
+            background: #222;
+            color: white;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            background: #ff4500;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .cta button:hover {
+            background: #ff2200;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px 20px;
+            }
+            .parallax {
+                font-size: 2rem;
+            }
+            .cta h2 {
+                font-size: 2rem;
+            }
+            .cta button {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body data-scroll-container>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#">Parallax Website</a>
+    </div>
+
+    <div class="smooth-scroll">
+        
+        <section class="parallax bg1" data-scroll data-scroll-speed="-3">
+            <h1>Welcome to the Future</h1>
+        </section>
+
+        <section class="content">
+            <h2>Experience the Magic</h2>
+            <p>Explore the power of smooth animations and depth effects using Locomotive Scroll and GSAP.</p>
+        </section>
+
+        <section class="parallax bg2" data-scroll data-scroll-speed="-3">
+            <h1>Scroll Down for More</h1>
+        </section>
+
+        <section class="content">
+            <h2>Easy to Implement</h2>
+            <p>Just copy and paste this code into your project, and you’re ready to go!</p>
+        </section>
+
+        <section class="cta">
+            <h2>Ready to Build Your Own?</h2>
+            <button>Get Started</button>
+        </section>
+
+    </div>
+
+    <script>
+        // Initialize Locomotive Scroll for smooth scrolling
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector("[data-scroll-container]"),
+            smooth: true
+        });
+
+        // Register GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // GSAP Parallax Effect
+        gsap.to(".bg1", {
+            y: -100,
+            scrollTrigger: {
+                trigger: ".bg1",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+        gsap.to(".bg2", {
+            y: -100,
+            scrollTrigger: {
+                trigger: ".bg2",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+        // Fade-in animations for sections
+        gsap.utils.toArray(".parallax, .content, .cta").forEach((section) => {
+            gsap.to(section, {
+                opacity: 1,
+                y: 0,
+                duration: 1.5,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+
+        // Change navbar background on scroll
+        window.addEventListener("scroll", function () {
+            let navbar = document.querySelector(".navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    </script>
+
+</body>
+</html>
