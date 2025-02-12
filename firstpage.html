@@ -14,7 +14,7 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: Arial;
         }
         .video-background {
             position: fixed;
@@ -203,7 +203,36 @@
                 align-items: center;
 
             }
+            .submit-btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ff5733;
+        border: none;
+        border-radius: 50px;
+        padding: 15px 25px;
+        font-size: 18px;
+        color: white;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.4s ease;
+    }
 
+    .submit-btn .arrow {
+        display: inline-block;
+        transition: transform 0.4s ease;
+    }
+
+    .takeoff {
+        animation: takeoff 1s ease-in-out forwards;
+    }
+
+    @keyframes takeoff {
+        0% { transform: translateY(0) rotate(0); }
+        50% { transform: translateY(-30px) rotate(30deg); }
+        100% { transform: translateY(-100px) rotate(45deg); opacity: 0; }
+    }
             .social-icons img {
                 width: 30px;
                 transition: transform 0.3s ease;
@@ -265,23 +294,36 @@
 
         <form class="form-container">
             <fieldset>
-                <legend>Starting Point 🛫</legend>
-            <input type="text" placeholder="Enter Your Starting Point"></fieldset>
-            <fieldset><legend>Destination 🛬</legend>
-            <input type="text" placeholder="Enter Your Destination"></fieldset>
-            <fieldset><legend>Number of People 💁🏻‍♂️</legend>
-            <input type="number" placeholder="Count"></fieldset>
-            <fieldset><legend>Budget 💸</legend>
-            <input type="number" min="0" step="1000" placeholder="Enter the amount" ></fieldset>
-            <fieldset><legend>Choose a Trip Type: ✈️</legend>
-            <select id="trip-type" name="trip-type">
-                <option value="" selected>Trip Type</option>
-                <option value="family">Family</option>
-                <option value="solo">Solo</option>
-                <option value="friends">Friends</option>
-                <option value="business">Business</option>
-                <option value="adventure">Adventure</option>
-            </select></fieldset>
+                <legend>Starting Point ✈️</legend>
+                <input type="text" placeholder="Enter Your Starting Point">
+            </fieldset>
+            <fieldset>
+                <legend>Destination 🛤</legend>
+                <input type="text" placeholder="Enter Your Destination">
+            </fieldset>
+            <fieldset>
+                <legend>Number of People 💁🏻‍♂️</legend>
+                <input type="number" placeholder="Count">
+            </fieldset>
+            <fieldset>
+                <legend>Budget 💸</legend>
+                <input type="number" min="0" step="1000" placeholder="Enter the amount">
+            </fieldset>
+            <fieldset>
+                <legend>Choose a Trip Type: ✈️</legend>
+                <select id="trip-type" name="trip-type">
+                    <option value="" selected>Trip Type</option>
+                    <option value="family">Family</option>
+                    <option value="solo">Solo</option>
+                    <option value="friends">Friends</option>
+                    <option value="business">Business</option>
+                    <option value="adventure">Adventure</option>
+                </select>
+            </fieldset>
+            
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span class="arrow">&rarr;</span>
+            </button>
         </form>
     </div>
     <div class="box-content">
@@ -338,5 +380,14 @@
             <p>&copy; 2025 Lesss Gooo. All rights reserved.</p>
         </div>
     </footer>
+    <script>document.getElementById("submitBtn").addEventListener("click", function(event) {
+        event.preventDefault();
+        let arrow = this.querySelector(".arrow");
+        arrow.innerHTML = "\u2708\ufe0f"; // Change arrow to airplane emoji
+        arrow.classList.add("takeoff");
+        setTimeout(() => {
+            this.submit(); // Uncomment this if you want to actually submit the form
+        }, 1200);
+    });</script>
 </body>
 </html>
