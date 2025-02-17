@@ -204,25 +204,57 @@
 
             }
             .submit-btn {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #ff5733;
-        border: none;
-        border-radius: 50px;
-        padding: 15px 25px;
-        font-size: 18px;
-        color: white;
-        cursor: pointer;
-        overflow: hidden;
-        transition: all 0.4s ease;
-    }
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 183, 255, 0.8), 0 0 40px rgba(0, 183, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 
-    .submit-btn .arrow {
-        display: inline-block;
-        transition: transform 0.4s ease;
-    }
+.submit-btn:hover {
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+    box-shadow: 0 0 15px rgba(0, 183, 255, 1), 0 0 50px rgba(0, 183, 255, 0.7);
+    transform: scale(1.05);
+}
+
+.submit-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 5px rgba(0, 183, 255, 1);
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(0, 183, 255, 0.3), transparent);
+    top: -50%;
+    left: -50%;
+    transition: all 0.5s ease;
+}
+
+.submit-btn:hover::before {
+    top: 0;
+    left: 0;
+}
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.4s ease;
+    font-size: 20px;
+}
 
     .takeoff {
         animation: takeoff 1s ease-in-out forwards;
@@ -388,6 +420,23 @@
         setTimeout(() => {
             this.submit(); // Uncomment this if you want to actually submit the form
         }, 1200);
-    });</script>
+    });
+    document.getElementById("submitBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    let arrow = this.querySelector(".arrow");
+    arrow.innerHTML = "\u2708\ufe0f"; // Change arrow to airplane emoji
+    arrow.classList.add("takeoff");
+
+    this.style.transform = "scale(0.9)"; // Slight shrink effect
+
+    setTimeout(() => {
+        this.style.transform = "scale(1)";
+    }, 200);
+
+    setTimeout(() => {
+        this.submit(); // Uncomment this if you want to actually submit the form
+    }, 1200);
+});
+    </script>
 </body>
 </html>
