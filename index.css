@@ -87,7 +87,6 @@
             align-items: center;
         }
         
-        
         .heading {
             position: absolute;
             top: 50%;
@@ -153,7 +152,7 @@
         }
         .container {
             display: flex;
-            justify-content: center;
+            justify-content:center;
             margin-bottom: 300px;
             margin-top: 1100px; 
         }
@@ -263,7 +262,7 @@
                 font-family: 'Playfair Display', serif;
                 font-weight: 700;
             }
-            footer {
+            /* footer {
                  width: 100%;
                 padding: 60px 20px;
                 background: rgba(0, 0, 0, 0.5);
@@ -350,4 +349,93 @@
             .footer-section a:hover {
                 color: #ff5733;
             }
-            
+             */
+             
+        .footer {
+            background-color: transparent; /* Dark brown */
+            padding: 60px 10%;
+            text-align: left;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer p, 
+        .footer a {
+            font-size: 14px;
+            color: white;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Newsletter Input */
+        .newsletter-input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 2px solid white;
+            background: transparent;
+            color: white;
+            margin-top: 10px;
+        }
+
+        .newsletter-checkbox {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .newsletter-checkbox input {
+            margin-right: 5px;
+        }
+
+        .submit-button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            opacity: 0.8;
+        }
+
+        /* Branding Name */
+        .branding {
+            text-align: center;
+            font-size: 80px;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            margin-top: 50px;
+        }
+
+        /* Copyright */
+        .copyright {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 20px;
+            opacity: 0.7;
+        }

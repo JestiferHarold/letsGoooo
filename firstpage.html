@@ -10,13 +10,17 @@
 
         * {
             scroll-behavior: smooth;
+  
+        }
+        html, body {
+            overflow-x: hidden;
         }
         body {
             margin: 0;
             padding: 0;
             font-family: Arial;
         }
-        .video-background {
+        /* .video-background {
             position: fixed;
             top: 0;
             left: 0;
@@ -24,14 +28,14 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-        }
+        } */
 
         .top {
             position: relative;
             width: 100%;
             height: 80vh; 
-            border-radius: 50%;
-            /* background: url(https://images.pexels.com/photos/2902747/pexels-photo-2902747.jpeg?auto=compress&cs=tinysrgb&w=1200) no-repeat center center/cover; */
+            overflow: hidden; 
+            background: url(https://images.pexels.com/photos/2902747/pexels-photo-2902747.jpeg?auto=compress&cs=tinysrgb&w=1200) no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -51,7 +55,10 @@
             align-items: center;
             justify-content: center;
         }
-
+        .nav-container img {
+            width: 200px;
+            height: 100px;
+        }
 
         .nav-list {
             list-style: none;
@@ -65,7 +72,7 @@
 
 
         .nav-list li a {
-            color: wheat;
+            color: white;
             text-decoration: none;
             font-size: 25px; 
             font-weight: bold;
@@ -79,19 +86,19 @@
         }
         .form-container {
             position: absolute;
-            top: 50%;
+            top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: white;
-            padding: 30px;
+            background: transparent;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
-            width: 80%;
+            width: 90%;
             max-width: 1200px;
+            all: unset;
         }
 
         .form-container input, .form-container select {
@@ -104,17 +111,44 @@
             background-color: #f9f9f9;
             all:unset;
         }
-        .dropdown {
-            display: none;
-            position: absolute;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border-radius: 10px;
-            top: 100%;
-            left: 0;
-            min-width: 150px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 15px;
+            border-radius: 40px;
+            gap: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
+        .search-bar select,
+        .search-bar button {
+            border: none;
+            background: transparent;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+        }
+        .search-bar select {
+            padding: 10px;
+            border-radius: 10px;
+            appearance: none;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .search-bar button {
+            background: white;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+        .dropdown {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+
 
         .dropdown a {
             display: block;
@@ -129,18 +163,11 @@
         }
 
         .nav-list li:hover .dropdown {
-            display: block;
+            opacity: 1;
+            visibility: visible;
         }
-        .box-content {
-            padding: 50px;
-            margin: 300px 50px 50px 50px;
-            background-color: bisque;
-            box-shadow: rgba(0, 0, 0, 0.2);
-            border: 2px solid black;
-            color: red;
-            font-family: 'Merriweather';
-        }
-        footer {
+        
+            footer {
             width: 100%;
             padding: 60px 2px;
             background: rgba(0, 0, 0, 0.5);
@@ -204,61 +231,61 @@
 
             }
             .submit-btn {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(90deg, #00c6ff, #0072ff);
-    border: none;
-    border-radius: 50px;
-    padding: 15px 30px;
-    font-size: 18px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.4s ease-in-out;
-    box-shadow: 0 0 10px rgba(0, 183, 255, 0.8), 0 0 40px rgba(0, 183, 255, 0.5);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(90deg, #00c6ff, #0072ff);
+                border: none;
+                border-radius: 50px;
+                padding: 15px 30px;
+                font-size: 18px;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+                overflow: hidden;
+                transition: all 0.4s ease-in-out;
+                box-shadow: 0px 3px 10px rgba(255, 255, 255, 0.2);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
 
-.submit-btn:hover {
-    background: linear-gradient(90deg, #0072ff, #00c6ff);
-    box-shadow: 0 0 15px rgba(0, 183, 255, 1), 0 0 50px rgba(0, 183, 255, 0.7);
-    transform: scale(1.05);
-}
+            .submit-btn:hover {
+                background: linear-gradient(90deg, #0072ff, #00c6ff);
+                box-shadow: 0 0 15px rgba(0, 183, 255, 1), 0 0 50px rgba(0, 183, 255, 0.7);
+                transform: scale(1.05);
+            }
 
-.submit-btn:active {
-    transform: scale(0.95);
-    box-shadow: 0 0 5px rgba(0, 183, 255, 1);
-}
+            .submit-btn:active {
+                transform: scale(0.95);
+                box-shadow: 0 0 5px rgba(0, 183, 255, 1);
+            }
 
-.submit-btn::before {
-    content: '';
-    position: absolute;
-    width: 150%;
-    height: 150%;
-    background: radial-gradient(circle, rgba(0, 183, 255, 0.3), transparent);
-    top: -50%;
-    left: -50%;
-    transition: all 0.5s ease;
-}
+            .submit-btn::before {
+                content: '';
+                position: absolute;
+                width: 150%;
+                height: 150%;
+                background: radial-gradient(circle, rgba(0, 183, 255, 0.3), transparent);
+                top: -50%;
+                left: -50%;
+                transition: all 0.5s ease;
+            }
 
-.submit-btn:hover::before {
-    top: 0;
-    left: 0;
-}
+            .submit-btn:hover::before {
+                top: 0;
+                left: 0;
+            }
 
-.arrow {
-    display: inline-block;
-    transition: transform 0.4s ease;
-    font-size: 20px;
-}
+            .arrow {
+                display: inline-block;
+                transition: transform 0.4s ease;
+                font-size: 20px;
+            }
 
-    .takeoff {
-        animation: takeoff 1s ease-in-out forwards;
-    }
+                .takeoff {
+                    animation: takeoff 1s ease-in-out forwards;
+                }
 
     @keyframes takeoff {
         0% { transform: translateY(0) rotate(0); }
@@ -301,17 +328,15 @@
     </style>
 </head>
 <body>
-    <video autoplay muted loop class="video-background">
-        <source src="vecteezy_airplane-route-the-plane-hovered-on-the-dotted-line-travel_15510116.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+   
     <div class="top">
     
         <nav class="nav-container">
+            <img src="logo.png" alt="">
             <ul class="nav-list">
+                
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><img src="logo.png" alt=""></li>
                 <li><a href="#cu">Contact</a></li>
                 <li>
                     <a href="#">Bhargav </a>
@@ -324,25 +349,20 @@
         </nav>
 
 
-        <form class="form-container">
+        <form class="search-bar form-container">
             <fieldset>
-                <legend>Starting Point ✈️</legend>
                 <input type="text" placeholder="Enter Your Starting Point">
             </fieldset>
             <fieldset>
-                <legend>Destination 🛤</legend>
                 <input type="text" placeholder="Enter Your Destination">
             </fieldset>
             <fieldset>
-                <legend>Number of People 💁🏻‍♂️</legend>
                 <input type="number" placeholder="Count">
             </fieldset>
             <fieldset>
-                <legend>Budget 💸</legend>
                 <input type="number" min="0" step="1000" placeholder="Enter the amount">
             </fieldset>
             <fieldset>
-                <legend>Choose a Trip Type: ✈️</legend>
                 <select id="trip-type" name="trip-type">
                     <option value="" selected>Trip Type</option>
                     <option value="family">Family</option>
@@ -358,19 +378,7 @@
             </button>
         </form>
     </div>
-    <div class="box-content">
-        <h1>About US</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, libero accusantium quibusdam magni deserunt sapiente repellat, quod, facere laborum sunt voluptas nisi quam nihil ut cumque aliquid? Quod, neque reprehenderit?
-        Mollitia, odit veritatis repellendus autem illo earum voluptate suscipit placeat. Reiciendis, obcaecati. Placeat totam velit vitae commodi vero, voluptatum doloremque. Illo dicta dolorum voluptas excepturi deserunt iste consequuntur ipsa fugit!
-        Aliquam at voluptatem, hic distinctio quia recusandae maiores, sit soluta explicabo autem molestias et veniam nihil in repudiandae odio labore doloribus? Repudiandae possimus laboriosam magnam ad laudantium incidunt alias illo!
-        Commodi temporibus cupiditate distinctio nam debitis reprehenderit eveniet aliquid molestiae obcaecati ad quo minus provident, illo ea iusto! Corporis, enim vero sapiente reprehenderit pariatur blanditiis ratione nemo placeat quidem suscipit.
-        Facere maiores adipisci qui minima optio recusandae veniam sapiente, unde dicta eligendi esse nisi doloremque perferendis tempora sequi debitis similique velit soluta nihil quisquam consectetur sit alias! Id, magni pariatur.
-        Et a suscipit hic inventore non esse expedita nemo commodi, accusamus magni aliquam quia, quod in eveniet. Fugiat delectus iusto nisi, placeat deserunt dicta, nihil aliquid totam ipsum molestiae blanditiis.
-        Eos quo accusamus, laboriosam quidem molestias sunt, iste recusandae tempora necessitatibus mollitia assumenda est ratione vel omnis a hic quisquam vero voluptate, provident quasi incidunt? Impedit blanditiis provident sunt dolor.
-        Porro earum libero repudiandae animi vel incidunt maxime vitae voluptatum. Optio, voluptatem in quibusdam et accusamus mollitia iure perferendis enim. Ullam est similique illum molestiae corporis doloribus ipsum error corrupti?
-        Neque sint placeat consequuntur architecto ad unde est accusantium expedita sit laboriosam, minus culpa nemo veritatis tenetur omnis quia, voluptate iure error quo aperiam quisquam? Voluptate repellat tempore unde fuga.
-        Nihil minima, nulla assumenda at odit eum repellendus labore eligendi perspiciatis, quo odio repudiandae quasi soluta, modi omnis. A minus eos fugiat accusamus, animi vitae nisi molestiae asperiores maiores commodi!</p>
-    </div>
+   
     <footer>
         <div class="footer-container">
             <div class="footer-section">
@@ -390,8 +398,7 @@
     
             <div class="footer-section">
                 <h3 id="cu">Contact Us</h3>
-                <a href="mailto:support@lesssgoo.com"><p type="email" >Email: support@lesssgoo.com</p></a>
-                <a href="tel:+917032159698"><p>Phone: +91 7032159698</p></a>
+                <p>Email: <a href="mailto:support@lesssgoo.com">support@lesssgoo.com</a></p><a href="tel:+917032159698"><p>Phone: +91 7032159698</p></a>
                 <a href="https://maps.app.goo.gl/dv4zbcNXYVCHt1f38"><p>Address: Amrita Vishwa Vidyapeetham, Coimbatore, Tamil Nadu, India</p></a>
             </div>
     

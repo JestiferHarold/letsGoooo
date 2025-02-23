@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Login & Signup</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
         * {
             margin: 0;
@@ -15,49 +16,65 @@
         }
 
         .loginpage {
-            padding-top: 200px;
-            padding-right: 100px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            min-height: 80vh;
-            background-image: url(https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzYxfHx0cmF2ZWx8ZW58MHx8MHx8fDA%3D);
-            background-size:cover;
-            background-position:bottom;
+            min-height: 100vh;
+            background-image: url(https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?w=900&auto=format&fit=crop&q=60);
+            background-size: cover;
+            background-position: bottom;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            padding: 50px;
         }
 
         .tagline {
             color: #fff;
-            max-width: 850px; 
+            max-width: 850px;
             font-size: 50px;
             font-weight: 600;
-            line-height: 1.5;
-            padding-left: 50px;
-            padding-bottom: 70px;
+            line-height: 1.0;
+            transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
         }
 
         .wrapper {
             width: 420px;
             background: rgba(255, 255, 255, 0.1);
             border: 2px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(2px);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             color: #fff;
-            padding: 30px 40px;
+            padding: 20px 40px;
             border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .wrapper:hover {
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            transform: translateY(-5px);
+            position: relative;
+            overflow: hidden;
         }
 
         .wrapper h1 {
             font-size: 36px;
             text-align: center;
+        }
+
+        .form-container {
+            position: relative;
+            height: 450px;
+        }
+
+        .form-container form {
+            position: absolute;
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        #signup-form {
+            transform: translateY(100%);
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+        }
+        #login-form {
+            position: relative;
+            width: 100%;
         }
 
         .input-box {
@@ -80,169 +97,186 @@
             padding: 20px 45px 20px 20px;
         }
 
-        .input-box input::placeholder {
-            color: #fff;
-        }
-
-        .input-box i {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 20px;
-        }
-
-        .remember-forget {
-            display: flex;
-            justify-content: flex-end;
-            font-size: 14.5px;
-            margin: -15px 0 15px;
-        }
-
-        .remember-forget a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .remember-forget a:hover {
-            text-decoration: underline;
-        }
-
-        .wrapper .btn {
+        .btn {
             width: 100%;
-            height: 45px;
-            background: #fff;
-            border: none;
-            outline: none;
-            border-radius: 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
+            padding: 12px;
+            background-color: white;
+            color: black;
             font-size: 16px;
-            color: #333;
             font-weight: 600;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 25px;
+            transition: background 0.3s;
         }
 
-        .wrapper .btn:hover {
+        .btn:hover {
             background: rgba(255, 255, 255, 0.5);
             color: #fff;
         }
 
-        .divider {
-            margin: 20px 0;
-            position: relative;
-            font-size: 14px;
-            color: #888;
-            text-align: center;
-        }
-
-        .divider::before,
-        .divider::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            width: 40%;
-            height: 1px;
-            background: #fff;
-        }
-
-        .divider::before {
-            left: 0;
-        }
-
-        .divider::after {
-            right: 0;
-        }
-
-        .social-buttons button {
+        .social-btn {
             width: 100%;
-            margin: 10px 0;
-            background: transparent;
-            color: #fff;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 30px;
             padding: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            font-size: 14px;
+            margin-top: 10px;
             transition: 0.3s;
         }
 
-        .social-buttons button:hover {
-            background: rgba(255, 255, 255, 0.2);
+        .google-btn {
+            background: transparent;
+            color: #fff;
+            border: 1px solid white;
+
+        }
+
+        .apple-btn {
+            background: transparent;
+            color: #fff;
+            border: 1px solid white;
+        }
+
+        .social-btn i {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .social-btn:hover {
+            opacity: 0.8;
         }
 
         .register-link {
-            font-size: 14.5px;
             text-align: center;
-            margin: 20px 0 15px;
+            margin-top: 15px;
         }
 
-        .register-link p a {
+        .register-link a {
             color: #fff;
             text-decoration: none;
             font-weight: 600;
         }
 
-        .register-link p a:hover {
+        .register-link a:hover {
             text-decoration: underline;
-        }</style>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        }
+
+        .move-left {
+            transform: translateX(-50px);
+            opacity: 0;
+        }
+
+        .move-right {
+            transform: translateX(50px);
+            opacity: 0;
+        }
+
+        .fade-in {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+    </style>
 </head>
 <body class="loginpage">
-    <div class="tagline">
+    <div class="tagline fade-in" id="tagline">
         <p>Elevate your travel—no limits, just unforgettable moments.</p>
     </div>
     <div class="wrapper">
-        <form action="/firstpage.html">
-            <h1>
-                Lesss Gooo
-            </h1>
-            <div class="input-box">
-                <input type="text" placeholder="Email or Phone" required>
-                <i class='bx bxs-user'></i>
-            </div>
-            <div class="input-box">
-                <input type="password" placeholder="Password" required>
-                <i class='bx bxs-lock-alt'></i>
-            </div>
-            <div class="remember-forget">
-                <label>
-                    <input type="checkbox" name="remember" checked required>
-                    Remember Me
-            <div class="remember-forget">
-                <a href="forgotpass.html" class="forget">Forgot password</a>
-            </div>
-            <a href="firstpage.html"><button type="submit" class="btn">Login</button></a>
-        </form>
-        <div class="divider">or</div>
-        <div class="social-buttons">
-            <button onclick="openGooglePopup()">Sign in with Google</button>
-            <button onclick="openApplePopup()">Sign in with Apple</button>
-        </div>
-        <div class="register-link">
-            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+        <div class="form-container">
+            <form id="login-form" action="firstpage.html">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Email or Phone" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+<!--                 
+                <button class="social-btn google-btn">
+                    <i class='bx bxl-google'></i>Login with Google
+                </button>
+                <button class="social-btn apple-btn">
+                    <i class='bx bxl-apple'></i>Login with Apple
+                </button> -->
+
+                <div class="register-link">
+                    <p>Don't have an account? <a href="#" onclick="toggleForms()">Sign up</a></p>
+                    <a href="forgotpass.html">Forgot Password?</a>
+                </div>
+            </form>
+
+            <form id="signup-form" action="sample.html">
+                <h1>Sign Up</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+                <div class="register-link">
+                    <p>Already have an account? <a href="#" onclick="toggleForms()">Login</a></p>
+                </div>
+            </form>
         </div>
     </div>
+    
     <script>
-        function openGooglePopup() {
-            let popup = window.open(
-                "google-login.html", 
-                "GoogleSignIn",
-                "width=500,height=600,left=100,top=100"
-            );
-            
-            if (!popup) {
-                alert("Popup blocked! Please allow pop-ups for this site.");
-            }
-        }
-        function openApplePopup() {
-            let popup = window.open(
-                "apple-login.html", 
-                "AppleSignIn",
-                "width=500,height=600,left=100,top=100"
-                );
-        }
-    </script>
+        function toggleForms() {
+    const loginForm = document.getElementById("login-form");
+    const signupForm = document.getElementById("signup-form");
+    const tagline = document.getElementById("tagline");
 
-   
+    if (signupForm.style.opacity === "1") {
+        loginForm.style.transform = "translateY(0%)";
+        loginForm.style.opacity = "1";
+        signupForm.style.transform = "translateY(100%)";
+        signupForm.style.opacity = "0";
+
+        setTimeout(() => {
+            signupForm.style.position = "absolute";
+            loginForm.style.position = "relative";
+        }, 500);
+
+        tagline.classList.remove("fade-in");
+        tagline.classList.add("move-left");
+
+        setTimeout(() => {
+            tagline.innerHTML = "Elevate your travel—no limits, just unforgettable moments.";
+            tagline.classList.remove("move-left");
+            tagline.classList.add("fade-in");
+        }, 600);
+    } else {
+        loginForm.style.transform = "translateY(-100%)";
+        loginForm.style.opacity = "0";
+        signupForm.style.transform = "translateY(0%)";
+        signupForm.style.opacity = "1";
+        signupForm.style.position = "relative";
+        loginForm.style.position = "absolute";
+
+        tagline.classList.remove("fade-in");
+        tagline.classList.add("move-right");
+
+        setTimeout(() => {
+            tagline.innerHTML = "Join us and start planning your next adventure!";
+            tagline.classList.remove("move-right");
+            tagline.classList.add("fade-in");
+        }, 600);
+    }
+}
+        
+    </script>
 </body>
 </html>
