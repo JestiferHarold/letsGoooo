@@ -41,15 +41,15 @@
             align-items: center;
             justify-content: center;
         }
-
+        .nav-container img {
+            margin-right: auto;
+        }
         .nav-container {
             position: absolute;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
             background: transparent;
-            border: 5px solid white;
-            border-radius: 30px;
             padding: 5px 30vw;
             display: flex;
             align-items: center;
@@ -62,6 +62,8 @@
 
         .nav-list {
             list-style: none;
+            border: 5px solid white;
+            border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -330,7 +332,7 @@
 <body>
    
     <div class="top">
-    
+
         <nav class="nav-container">
             <img src="logo.png" alt="">
             <ul class="nav-list">
@@ -350,19 +352,13 @@
 
 
         <form class="search-bar form-container">
-            <fieldset>
                 <input type="text" placeholder="Enter Your Starting Point">
-            </fieldset>
-            <fieldset>
                 <input type="text" placeholder="Enter Your Destination">
-            </fieldset>
-            <fieldset>
+           
                 <input type="number" placeholder="Count">
-            </fieldset>
-            <fieldset>
+           
                 <input type="number" min="0" step="1000" placeholder="Enter the amount">
-            </fieldset>
-            <fieldset>
+           
                 <select id="trip-type" name="trip-type">
                     <option value="" selected>Trip Type</option>
                     <option value="family">Family</option>
@@ -371,7 +367,7 @@
                     <option value="business">Business</option>
                     <option value="adventure">Adventure</option>
                 </select>
-            </fieldset>
+            
             
             <button type="submit" class="submit-btn" id="submitBtn">
                 <span class="arrow">&rarr;</span>
