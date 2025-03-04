@@ -3,38 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Login & Signup</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body class="loginpage">
+    <div class="tagline fade-in" id="tagline">
+        <p>Elevate your travel—no limits, just unforgettable moments.</p>
+    </div>
     <div class="wrapper">
-        <form action="">
-            <h1>
-                Podham..!!!
-            </h1>
-            <div class="input-box">
-                <input type="text" placeholder="Username">
-                <i class='bx bxs-user'></i>
-            </div>
-            <div class="input-box">
-                <input type="password" placeholder="Password">
-                <i class='bx bxs-lock-alt'></i>
-            </div>
-            <div class="remember-forget">
-                <a href="forgotpass.html" class="forget">Forgot password</a>
-            </div>
-            <button type="submit" class="btn">Login</button>
-        </form>
-        <div class="divider">or</div>
-        <div class="social-buttons">
-            <button>Sign in with Phone Number</button>
-            <button>Sign in with Google</button>
-            <button>Sign in with Apple</button>
-        </div>
-        <div class="register-link">
-            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+        <div class="form-container">
+            <form id="login-form" action="firstpage.html">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Email or Phone" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="register-link">
+                    <p>Don't have an account? <a href="#" onclick="toggleForms()">Sign up</a></p>
+                    <a href="forgotpass.html">Forgot Password?</a>
+                </div>
+            </form>
+
+            <form id="signup-form" action="sample.html">
+                <h1>Sign Up</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+                <div class="register-link">
+                    <p>Already have an account? <a href="#" onclick="toggleForms()">Login</a></p>
+                </div>
+            </form>
         </div>
     </div>
+    
+    <script>
+        function toggleForms() {
+    const loginForm = document.getElementById("login-form");
+    const signupForm = document.getElementById("signup-form");
+    const tagline = document.getElementById("tagline");
+
+    if (signupForm.style.opacity === "1") {
+        loginForm.style.transform = "translateY(0%)";
+        loginForm.style.opacity = "1";
+        signupForm.style.transform = "translateY(100%)";
+        signupForm.style.opacity = "0";
+
+        setTimeout(() => {
+            signupForm.style.position = "absolute";
+            loginForm.style.position = "relative";
+        }, 500);
+
+        tagline.classList.remove("fade-in");
+        tagline.classList.add("move-left");
+
+        setTimeout(() => {
+            tagline.innerHTML = "Elevate your travel—no limits, just unforgettable moments.";
+            tagline.classList.remove("move-left");
+            tagline.classList.add("fade-in");
+        }, 600);
+    } else {
+        loginForm.style.transform = "translateY(-100%)";
+        loginForm.style.opacity = "0";
+        signupForm.style.transform = "translateY(0%)";
+        signupForm.style.opacity = "1";
+        signupForm.style.position = "relative";
+        loginForm.style.position = "absolute";
+
+        tagline.classList.remove("fade-in");
+        tagline.classList.add("move-right");
+
+        setTimeout(() => {
+            tagline.innerHTML = "Join us and start planning your next adventure!";
+            tagline.classList.remove("move-right");
+            tagline.classList.add("fade-in");
+        }, 600);
+    }
+}
+        
+    </script>
 </body>
 </html>

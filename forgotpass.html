@@ -16,7 +16,7 @@
     </div>
     <div class="otp-box">
       <div class="input-box">
-        <input type="text" placeholder="Enter OTP" id="otp">
+        <input type="text" placeholder="Enter OTP" id="otp"  pattern="[0-9]{6}" required maxlength="6">
         <i class='bx bxs-key'></i>
       </div>
     </div>
@@ -30,20 +30,20 @@
       if (!otpSent) {
         const email = document.getElementById('email').value;
         if (!email) {
-          alert("Please enter your email address.");
+        alert("Please enter your email address.");
           return;
         }
         document.querySelector('.otp-box').style.display = 'block';
         document.querySelector('.btn').textContent = "Confirm OTP";
         otpSent = true;
-        alert("OTP sent to your email!"); // Simulate OTP send action
+        alert("OTP sent to your email!"); 
       } else {
         const otp = document.getElementById('otp').value;
         if (!otp) {
           alert("Please enter the OTP.");
           return;
         }
-        window.location.href = "resetpass.html"; // Redirect to the reset password page
+        window.location.href = "resetpass.html"; 
       }
     }
   </script>

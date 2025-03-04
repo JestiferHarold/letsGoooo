@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form with Background</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
+
+        * {
+            scroll-behavior: smooth;
+  
+        }
+        html, body {
+            overflow-x: hidden;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial;
+        }
+        /* .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        } */
+
+        .top {
+            position: relative;
+            width: 100%;
+            height: 80vh; 
+            overflow: hidden; 
+            background: url(https://images.pexels.com/photos/2902747/pexels-photo-2902747.jpeg?auto=compress&cs=tinysrgb&w=1200) no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-container img {
+            margin-right: auto;
+        }
+        .nav-container {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: transparent;
+            padding: 5px 30vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-container img {
+            width: 200px;
+            height: 100px;
+        }
+
+        .nav-list {
+            list-style: none;
+            border: 5px solid white;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px; 
+            padding: 12px 20px;
+            margin: 0;
+        }
+
+
+        .nav-list li a {
+            color: white;
+            text-decoration: none;
+            font-size: 25px; 
+            font-weight: bold;
+            padding: 12px 20px;
+        }
+
+
+        .nav-list li img {
+            width: 180px; 
+            height: auto;
+        }
+        .form-container {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: transparent;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            width: 90%;
+            max-width: 1200px;
+            all: unset;
+        }
+
+        .form-container input, .form-container select {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: calc(50% - 10px);
+            font-size: 16px;
+            outline: none;
+            background-color: #f9f9f9;
+            all:unset;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 15px;
+            border-radius: 40px;
+            gap: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .search-bar select,
+        .search-bar button {
+            border: none;
+            background: transparent;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+        }
+        .search-bar select {
+            padding: 10px;
+            border-radius: 10px;
+            appearance: none;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .search-bar button {
+            background: white;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+        .dropdown {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+
+
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .dropdown a:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .nav-list li:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+            footer {
+            width: 100%;
+            padding: 60px 2px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            color: white;
+            text-align: center;
+            }
+
+            .footer-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: center;
+                max-width: 1200px;
+                margin: auto;
+            }
+
+            .footer-section {
+                flex: 1;
+                min-width: 250px;
+                margin: 20px;
+            }
+
+            .footer-section h2, 
+            .footer-section h3 {
+                font-family: 'Playfair Display', serif;
+               font-size: 22px;
+                margin-bottom: 10px;
+                }
+
+            .footer-section p,
+            .footer-section ul {
+                font-size: 16px;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            .footer-section ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .footer-section ul li {
+                margin: 8px 0;
+            }
+
+            .footer-section ul li a {
+                text-decoration: none;
+                color: white;
+                transition: color 0.3s ease;
+            }
+
+            .footer-section ul li a:hover {
+                color: #ff5733;
+            }
+
+            .social-icons {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                align-items: center;
+
+            }
+            .submit-btn {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(90deg, #00c6ff, #0072ff);
+                border: none;
+                border-radius: 50px;
+                padding: 15px 30px;
+                font-size: 18px;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+                overflow: hidden;
+                transition: all 0.4s ease-in-out;
+                box-shadow: 0px 3px 10px rgba(255, 255, 255, 0.2);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            .submit-btn:hover {
+                background: linear-gradient(90deg, #0072ff, #00c6ff);
+                box-shadow: 0 0 15px rgba(0, 183, 255, 1), 0 0 50px rgba(0, 183, 255, 0.7);
+                transform: scale(1.05);
+            }
+
+            .submit-btn:active {
+                transform: scale(0.95);
+                box-shadow: 0 0 5px rgba(0, 183, 255, 1);
+            }
+
+            .submit-btn::before {
+                content: '';
+                position: absolute;
+                width: 150%;
+                height: 150%;
+                background: radial-gradient(circle, rgba(0, 183, 255, 0.3), transparent);
+                top: -50%;
+                left: -50%;
+                transition: all 0.5s ease;
+            }
+
+            .submit-btn:hover::before {
+                top: 0;
+                left: 0;
+            }
+
+            .arrow {
+                display: inline-block;
+                transition: transform 0.4s ease;
+                font-size: 20px;
+            }
+
+                .takeoff {
+                    animation: takeoff 1s ease-in-out forwards;
+                }
+
+    @keyframes takeoff {
+        0% { transform: translateY(0) rotate(0); }
+        50% { transform: translateY(-30px) rotate(30deg); }
+        100% { transform: translateY(-100px) rotate(45deg); opacity: 0; }
+    }
+            .social-icons img {
+                width: 30px;
+                transition: transform 0.3s ease;
+            }
+
+            .social-icons img:hover {
+                transform: scale(1.2);
+            }
+
+            .footer-bottom {
+                margin-top: 20px;
+                font-size: 14px;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                padding-top: 10px;
+            }
+            .footer-section a {
+                color: white;
+                text-decoration: none;
+                line-height: 30px;
+            }
+            .footer-section a:hover {
+                color: #ff5733;
+            }
+
+        @media (max-width: 768px) {
+            .form-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .form-container input, .form-container select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="top">
+
+        <nav class="nav-container">
+            <img src="logo.png" alt="">
+            <ul class="nav-list">
+                
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#cu">Contact</a></li>
+                <li>
+                    <a href="#">Bhargav </a>
+                    <!-- <div class="dropdown">
+                        <a href="#">Account</a>
+                        <a href="#">Sign Out</a>
+                    </div> -->
+                </li>
+            </ul>
+        </nav>
+
+
+        <form class="search-bar form-container">
+                <input type="text" placeholder="Enter Your Starting Point">
+                <input type="text" placeholder="Enter Your Destination">
+           
+                <input type="number" placeholder="Count">
+           
+                <input type="number" min="0" step="1000" placeholder="Enter the amount">
+           
+                <select id="trip-type" name="trip-type">
+                    <option value="" selected>Trip Type</option>
+                    <option value="family">Family</option>
+                    <option value="solo">Solo</option>
+                    <option value="friends">Friends</option>
+                    <option value="business">Business</option>
+                    <option value="adventure">Adventure</option>
+                </select>
+            
+            
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span class="arrow">&rarr;</span>
+            </button>
+        </form>
+    </div>
+   
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>Lesss Goo</h2>
+                <p>Your AI-powered travel architect—turning your journeys into seamless, unforgettable adventures.</p>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3 id="cu">Contact Us</h3>
+                <p>Email: <a href="mailto:support@lesssgoo.com">support@lesssgoo.com</a></p><a href="tel:+917032159698"><p>Phone: +91 7032159698</p></a>
+                <a href="https://maps.app.goo.gl/dv4zbcNXYVCHt1f38"><p>Address: Amrita Vishwa Vidyapeetham, Coimbatore, Tamil Nadu, India</p></a>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-pinterest"></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lesss Gooo. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>document.getElementById("submitBtn").addEventListener("click", function(event) {
+        event.preventDefault();
+        let arrow = this.querySelector(".arrow");
+        arrow.innerHTML = "\u2708\ufe0f"; // Change arrow to airplane emoji
+        arrow.classList.add("takeoff");
+        setTimeout(() => {
+            this.submit(); // Uncomment this if you want to actually submit the form
+        }, 1200);
+    });
+    document.getElementById("submitBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    let arrow = this.querySelector(".arrow");
+    arrow.innerHTML = "\u2708\ufe0f"; // Change arrow to airplane emoji
+    arrow.classList.add("takeoff");
+
+    this.style.transform = "scale(0.9)"; // Slight shrink effect
+
+    setTimeout(() => {
+        this.style.transform = "scale(1)";
+    }, 200);
+
+    setTimeout(() => {
+        this.submit(); // Uncomment this if you want to actually submit the form
+    }, 1200);
+});
+    </script>
+</body>
+</html>
